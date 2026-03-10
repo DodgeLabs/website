@@ -1,3 +1,7 @@
 name: DodgeLabs
 markdown: kramdown
 permalink: pretty
+collections:
+  newsletters:
+    output: true
+    permalink: /newsletter/:name/

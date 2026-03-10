@@ -4,6 +4,7 @@ title: Why Getting Insights from Your Data is Hard
 author: Roger Mitchell
 date: 2025-04-05
 description: Integrate your data systems for comprehensive insights and easier analysis, avoiding silos that hinder decision-making. Discover how to blend data for efficiency and profitability.
+tldr: Insights from your data is way easier when you tie things together and have a bigger picture perspective. You don’t need to draw from your line of credit to make it happen, either.
 ---
 You have tons of data and want to get insights from it that can drive decisions.
 

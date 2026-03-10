@@ -4,6 +4,7 @@ title: When Your Systems Work Inconsistently Like a Failing Water Heater
 author: Roger Mitchell
 date: 2025-04-02
 description: Tackle system inconsistencies to enhance efficiency and reduce hidden costs. Don't tolerate inefficiency; explore sustainable alternatives to maintain reliability and productivity.
+tldr: Inconsistency produces inefficiency, and that has hidden costs that add up over time. Don’t normalize inconsistency in your organization. Ask or demand sustainable alternatives.
 ---
 Imagine the excitement of getting hotter than usual water for a shower. It’s glorious, like a fancy hotel.
 

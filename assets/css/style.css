@@ -1,0 +1,104 @@
+:root {
+  --color-bg: #f7f5f3;
+  --color-cream: #fcfcfc;
+  --color-navy: #14133d;
+  --color-red: #ee4e47;
+  --color-text: #1f1f1f;
+  --color-white: #ffffff;
+  --color-shadow-dots: #1f1f1f2f;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  background-image: radial-gradient(
+    var(--color-shadow-dots) 1px,
+    transparent 1px
+  );
+  background-size: 1.5rem 1.5rem;
+  background-position: top left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+  color: var(--color-text);
+  margin-top: 0;
+}
+
+p,
+ul,
+ol {
+  line-height: 1.6;
+}
+
+.site-header {
+  background-color: var(--color-navy);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo {
+  height: 40px;
+}
+
+.site-header nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.site-header nav a:hover {
+  color: var(--color-red);
+}
+
+.container {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: var(--color-cream);
+  border-radius: 16px;
+  padding: 48px;
+  margin-bottom: 24px;
+  box-shadow: var(--color-shadow-dots) 0px 5px 10px 0px;
+}
+
+.card__header {}
+.card__body {}
+.card__footer {}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 16px;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red);
+}
+
+.btn-primary svg {
+  width: 16px;
+  margin-left: 12px;
+  fill: currentColor;
+}

@@ -36,7 +36,7 @@ Sometimes people don’t even validate that last point because they’re more co
 
 The area where this becomes really sketchy is when organizations normalize inconsistency.
 
-Just like the [hidden costs of quick fixes](how-to-manage-the-hidden-cost-of-quick-fixes.md) and [unnecessary complexity](why-eliminate-unnecessary-complexity.md), the inefficiency builds up over time.
+Just like the [hidden costs of quick fixes]({% link _newsletters/how-to-manage-the-hidden-cost-of-quick-fixes.md %}) and [unnecessary complexity]({% link _newsletters/why-eliminate-unnecessary-complexity.md %}), the inefficiency builds up over time.
 
 If something feels like it could be better, it’s worth asking or demanding time to define what it is and discover potential alternatives.
 

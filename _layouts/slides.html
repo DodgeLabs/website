@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/assets/css/slides.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/simple.min.css" id="theme">
+
+<main class="container container--slides">
+  <article class="card card--slides">
+    <div class="reveal-wrapper">
+      <div class="reveal">
+        <div class="slides">
+          <section data-markdown 
+                   data-separator="^\r?\n---\r?\n$" 
+                   data-separator-vertical="^\r?\n--\r?\n$">
+            <textarea data-template>
+{{ page.content }}
+            </textarea>
+          </section>
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/notes/notes.min.js"></script>
+<script>
+  Reveal.initialize({
+    embedded: true,
+    keyboardCondition: 'focused',
+    hash: true,
+    controls: true,
+    progress: true,
+    center: true,
+    plugins: [ RevealMarkdown, RevealNotes ]
+  });
+</script>

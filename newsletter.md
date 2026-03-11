@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Newsletter
 ---
 {% assign sorted_newsletters = site.newsletters | sort: 'date' | reverse %}

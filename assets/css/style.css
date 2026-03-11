@@ -68,6 +68,12 @@ ol {
   padding: 0 20px;
 }
 
+.container--wide {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
 .card {
   background-color: var(--color-cream);
   border-radius: 16px;
@@ -101,4 +107,8 @@ ol {
   width: 16px;
   margin-left: 12px;
   fill: currentColor;
+}
+
+.cal-embed iframe {
+  height: 800px !important;
 }

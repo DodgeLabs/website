@@ -3,6 +3,7 @@ url: "https://dodgelabs.github.io"
 baseurl: "/website"
 markdown: kramdown
 permalink: pretty
+theme: null
 
 collections:
   newsletters:

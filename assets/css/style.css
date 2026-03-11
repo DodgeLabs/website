@@ -112,7 +112,7 @@ ol {
   max-height: calc(100vh - 196px);
   aspect-ratio: 16 / 9;
   margin: 0 auto;
-  padding: 16px;
+  padding: 32px;
   height: auto;
   display: flex;
   flex-direction: column;

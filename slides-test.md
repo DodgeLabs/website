@@ -22,7 +22,7 @@ You can also use `inline code` to highlight specific words, or add [hyperlinks t
 
 ---
 
-## Unordered Lists
+## Section
 Here is a standard bulleted list:
 
 * First item
@@ -36,7 +36,7 @@ Press **Down** to see Ordered Lists.
 
 --
 
-## Ordered Lists
+### Heading 3
 Here is a numbered list:
 
 1. First item
@@ -50,7 +50,27 @@ Press **Down** to see Task Lists.
 
 --
 
-## Task Lists
+#### Heading 4
+Great for showing progress or checklists:
+
+- [x] Integrate Reveal.js
+- [x] Configure Dodge Labs branding
+- [x] Write the CSS overrides
+- [ ] Deliver the presentation
+
+--
+
+##### Heading 5
+Great for showing progress or checklists:
+
+- [x] Integrate Reveal.js
+- [x] Configure Dodge Labs branding
+- [x] Write the CSS overrides
+- [ ] Deliver the presentation
+
+--
+
+###### Heading 6
 Great for showing progress or checklists:
 
 - [x] Integrate Reveal.js
@@ -73,10 +93,10 @@ Nested blockquotes also work:
 
 ---
 
-## Code Blocks
+### Code Blocks
 Reveal.js natively supports code highlighting. 
 
-```javascript
+```javascript[1-11]
 // A simple JavaScript function
 function greetUser(name) {
   if (!name) {

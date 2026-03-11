@@ -9,4 +9,172 @@
 .reveal {
   width: 100% !important;
   height: 100% !important;
+  background-color: transparent;
+
+  --r-background-color: transparent;
+  --r-controls-color: var(--color-navy);
+  --r-progress-color: var(--color-red);
+
+  --r-main-font: "Roboto", sans-serif;
+  --r-main-color: var(--color-text);
+  
+  --r-heading-font: "Roboto Slab", serif;
+  --r-heading-color: var(--color-navy);
+  --r-heading-font-weight: 700;
+  --r-heading-text-transform: none;
+}
+
+.reveal .slides {
+  width: 100%;
+  font-size: 3vh;
+}
+
+.reveal h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+  width: 100%;
+}
+
+.reveal p, ol, ul, li {
+  text-align: left;
+  width: 100%;
+}
+
+.reveal .slides section:has(> h1:first-child) {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding-top: 0 !important;
+}
+
+.reveal .slides section > h1:first-child {
+  font-size: 10vh;
+  position: relative;
+  margin: 5vh 0;
+  width: auto;
+}
+
+.reveal .slides section:has(> h1:first-child) p {
+  text-align: center;
+}
+
+.reveal .slides section:has(> h2:first-child) {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  height: 100%;
+  padding-top: 0 !important;
+}
+
+.reveal .slides section > h2:first-child {
+  font-size: 8vh;
+  position: relative;
+  margin: 4vh 0;
+  width: auto;
+}
+
+.reveal .slides section > :is(h3, h4, h5, h6):first-child {
+  font-size: 4.5vh;
+  padding-bottom: min(2vh, 16px);
+  margin-bottom: min(3vh, 32px);
+}
+
+.reveal .slides section > h3:first-child {
+  border-bottom: min(1vh, 8px) solid var(--color-red);
+}
+
+.reveal .slides section > h4:first-child {
+  text-decoration: underline;
+  text-decoration-color: var(--color-red);
+  text-decoration-thickness: min(1vh, 8px);
+  text-underline-offset: min(1vh, 8px);
+  border-bottom: none;
+}
+
+.reveal .slides section > h5:first-child {
+  border-bottom: min(0.75vh, 6px) dotted var(--color-red);
+}
+
+.reveal .slides section > h6:first-child {
+  border-bottom: min(0.5vh, 4px) dashed var(--color-red);
+}
+
+.reveal .slides section ol, .reveal .slides section ul {
+  margin: 0 0 0 min(3vh, 32px);
+}
+
+.reveal .slides section ul li input[type="checkbox"] {
+  display: none;
+}
+
+.reveal .slides section ul li:has(input[type="checkbox"]) {
+  list-style-type: none;
+  position: relative;
+  padding-left: 2vh;
+}
+
+.reveal .slides section ul li:has(input[type="checkbox"]:not(:checked))::before {
+  content: "○";
+  color: var(--color-navy);
+  position: absolute;
+  left: calc(-1 * min(3vh, 32px));
+  font-weight: bold;
+}
+
+.reveal .slides section ul li:has(input[type="checkbox"]:checked)::before {
+  content: "✓"; 
+  color: #32a852;
+  position: absolute;
+  left: calc(-1 * min(3vh, 32px));
+  font-weight: bold;
+}
+
+.reveal .slides section ul li:has(input[type="checkbox"]:checked) {
+  text-decoration: line-through;
+  color: color-mix(in srgb, var(--color-text), transparent 50%);
+}
+
+.reveal .slides section pre {
+  background: #22272e !important; /* GitHub Dark Dimmed */
+  border: 1px solid #444c56;
+  border-radius: 8px;
+  padding-top: 3.5vh !important; /* Make room for the dots at the top */
+  position: relative;
+  box-shadow: var(--color-shadow-dots) 0px min(0.5vh, 8px) min(1vh, 16px) 0px;
+  overflow: hidden;
+}
+
+.reveal .slides section pre::before {
+  content: "";
+  position: absolute;
+  top: 1.2vh;
+  left: 1.2vh;
+  height: 1.2vh;
+  width: 5vh;
+  background-image: radial-gradient(circle, #ff5f56 0.5vh, transparent 0.5vh),
+              radial-gradient(circle, #ffbd2e 0.5vh, transparent 0.5vh),
+              radial-gradient(circle, #27c93f 0.5vh, transparent 0.5vh);
+  background-size: 1.2vh 1.2vh;
+  background-position: 0% center, 50% center, 100% center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.reveal .slides section .hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  text-align: right;
+  color: var(--color-cream);
+  vertical-align: top;
+  padding-right: min(1vh, 16px) !important;
+  min-width: min(2vh, 32px);
+}
+
+.reveal .hljs-ln-code {
+  padding-left: min(1vh, 16px) !important;
 }

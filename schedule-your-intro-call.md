@@ -2,6 +2,14 @@
 layout: main-wide
 title: Schedule Your Intro Call with Roger
 description: "Schedule a 30-minute intro call to discuss your operational challenges and goals. Experience a straightforward approach with no sales pressure or fluff."
+redirect_from:
+  - /advisory
+  - /intensives
+  - /work-with-roger
+  - /event/agentforce-world-tour-nyc
+  - /get-a-second-opinion-on-salesforce-licenses
+  - /strategy-session
+  - /quick-take
 ---
 
 <article class="card">

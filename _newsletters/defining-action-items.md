@@ -13,7 +13,7 @@ A lot of our meetings produce things to do afterwards, and whether you’re [wri
 
 An action item might be a single task or need to be broken down into multiple actions by the person that is responsible for it.
 
-I like to use this format: {{ Person’s first name }} to {{ verb }} {{ concise context }} by {{ date }}
+I like to use this format: {% raw %}{{ Person’s first name }} to {{ verb }} {{ concise context }} by {{ date }}{% endraw %}
 
 Here are some examples:
 

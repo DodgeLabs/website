@@ -3,7 +3,12 @@ url: "https://dodgelabs.github.io"
 baseurl: "/website"
 markdown: kramdown
 permalink: pretty
+
 collections:
   newsletters:
     output: true
     permalink: /newsletter/:name/
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap

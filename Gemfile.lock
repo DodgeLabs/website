@@ -307,6 +307,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-redirect-from
+  jekyll-sitemap
   webrick
 
 CHECKSUMS

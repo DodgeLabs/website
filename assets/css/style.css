@@ -62,6 +62,20 @@ ol {
   color: var(--color-red);
 }
 
+.site-footer {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin: 0;
+}
+
 .container {
   max-width: 800px;
   margin: 32px auto;
@@ -82,9 +96,12 @@ ol {
   box-shadow: var(--color-shadow-dots) 0px 5px 10px 0px;
 }
 
-.card__header {}
-.card__body {}
-.card__footer {}
+.card__header {
+}
+.card__body {
+}
+.card__footer {
+}
 
 .btn-primary {
   display: inline-flex;

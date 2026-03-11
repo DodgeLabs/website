@@ -22,6 +22,11 @@
         </nav>
     </header>
     {{ content }}
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ site.time | date: '%Y' }} Dodge Labs, LLC.<br>All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
 {% endcapture %}

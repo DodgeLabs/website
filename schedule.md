@@ -11,7 +11,7 @@ redirect_from:
 # Schedule with Roger
 </header>
 <div class="card__body">
-<div id="my-cal-inline-meeting" style="width: 100%; height: 100%; overflow: scroll">
+<div id="my-cal-inline-meeting" class="cal-embed" style="width: 100%; height: 100%; overflow: scroll">
 &nbsp;
 </div>
 </div>

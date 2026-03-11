@@ -1,11 +1,12 @@
 ---
 layout: newsletter
-title: When Your Systems Work Inconsistently Like a Failing Water Heater
+title: "When Your Systems Work Inconsistently Like a Failing Water Heater"
 author: Roger Mitchell
 date: 2025-04-02
-description: Tackle system inconsistencies to enhance efficiency and reduce hidden costs. Don't tolerate inefficiency; explore sustainable alternatives to maintain reliability and productivity.
-tldr: Inconsistency produces inefficiency, and that has hidden costs that add up over time. Don’t normalize inconsistency in your organization. Ask or demand sustainable alternatives.
+description: "Tackle system inconsistencies to enhance efficiency and reduce hidden costs. Don't tolerate inefficiency; explore sustainable alternatives to maintain reliability and productivity."
+tldr: "Inconsistency produces inefficiency, and that has hidden costs that add up over time. Don’t normalize inconsistency in your organization. Ask or demand sustainable alternatives."
 ---
+
 Imagine the excitement of getting hotter than usual water for a shower. It’s glorious, like a fancy hotel.
 
 The next day, it’s room temperature. Manageable, like a beach’s foot wash.
@@ -29,14 +30,14 @@ It also becomes less efficient, as time is spent retrying the same thing with ho
 Organizations often tolerate this inconsistency for a variety of reasons:
 
 1. It’s not painful enough, so it feels manageable to continue with the current state
-1. There are workarounds that are “doable” or “handle” the issue
-1. The fix could be expensive or disruptive
+2. There are workarounds that are “doable” or “handle” the issue
+3. The fix could be expensive or disruptive
 
 Sometimes people don’t even validate that last point because they’re more comfortable with that being unknown, even if the fix is not expensive or as disruptive as they think.
 
 The area where this becomes really sketchy is when organizations normalize inconsistency.
 
-Just like the [hidden costs of quick fixes](/newsletter/how-to-manage-the-hidden-cost-of-quick-fixes) and [unnecessary complexity](/newsletter/why-eliminate-unnecessary-complexity), the inefficiency builds up over time.
+Just like the [hidden costs of quick fixes](/newsletter/how-to-manage-the-hidden-cost-of-quick-fixes) and [unnecessary complexity](/newsletter/why-eliminate-unnecessary-complexity), the inefficiency that results from inconsistency builds up over time.
 
 If something feels like it could be better, it’s worth asking or demanding time to define what it is and discover potential alternatives.
 
@@ -44,4 +45,4 @@ In the case of the hot water heater, the fix might be swapping a temperature sen
 
 Plus, there are new approaches (tankless, on-demand water heaters) that provide the same outcome.
 
-TLDR: Inconsistency produces inefficiency, and that has hidden costs that add up over time. Don’t normalize inconsistency in your organization. Ask or demand sustainable alternatives.
+**TLDR:** Inconsistency produces inefficiency, and that has hidden costs that add up over time. Don’t normalize inconsistency in your organization. Ask or demand sustainable alternatives.

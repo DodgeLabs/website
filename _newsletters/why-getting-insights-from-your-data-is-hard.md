@@ -1,11 +1,12 @@
 ---
 layout: newsletter
-title: Why Getting Insights from Your Data is Hard
+title: "Why Getting Insights from Your Data is Hard"
 author: Roger Mitchell
-date: 2025-04-05
-description: Integrate your data systems for comprehensive insights and easier analysis, avoiding silos that hinder decision-making. Discover how to blend data for efficiency and profitability.
-tldr: Insights from your data is way easier when you tie things together and have a bigger picture perspective. You don’t need to draw from your line of credit to make it happen, either.
+date: 2025-04-04
+description: "Integrate your data systems for comprehensive insights and easier analysis, avoiding silos that hinder decision-making. Discover how to blend data for efficiency and profitability."
+tldr: "Insights from your data is way easier when you tie things together and have a bigger picture perspective. You don’t need to draw from your line of credit to make it happen, either."
 ---
+
 You have tons of data and want to get insights from it that can drive decisions.
 
 Maybe it’s deciding between two different paths.
@@ -36,9 +37,9 @@ This relies on more than just the data available in CRM.
 
 It needs the supporting data from your:
 
-- Finance system to attribute revenue
-- Utilization of your people to attribute cost
-- Assumptions made when you need to figure out how much time things take
+* Finance system to attribute revenue
+* Utilization of your people to attribute cost
+* Assumptions made when you need to figure out how much time things take
 
 But it’s 2025, and even with the uncertainty of tariffs and potential inflation…
 
@@ -48,4 +49,4 @@ Before you do another one-off analysis that is patchwork in Excel or Google Shee
 
 “What if we took a week to get this data blended together so we can easily rerun this analysis whenever we want?”
 
-**TLDR:** Insights from your data is way easier when you tie things together and have a bigger picture perspective. You don’t need to draw from your line of credit to make it happen, either.
+**TLDR:** Insights from your data is way easier when you tie things together and have a bigger picture perspective. You don’t need to draw from your line of credit to make it happen, either.

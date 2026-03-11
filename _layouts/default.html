@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | Dodge Labs</title>
     
+    {% if jekyll.environment == 'production' %}
+        {% include google-tag-manager-head.html %}
+    {% endif %}
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -13,6 +17,9 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+    {% if jekyll.environment == 'production' %}
+        {% include google-tag-manager-body.html %}
+    {% endif %}
     <header class="site-header">
         <a href="/">
             <img class="logo" src="/assets/images/dodge-labs-logo-white.png" alt="Dodge Labs Logo">

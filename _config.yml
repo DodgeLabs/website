@@ -1,6 +1,6 @@
 name: DodgeLabs
-url: "https://dodgelabs.github.io"
-baseurl: "/website"
+url: "https://dodgelabs.com"
+baseurl: ""
 markdown: kramdown
 permalink: pretty
 theme: null

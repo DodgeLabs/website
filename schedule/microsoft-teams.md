@@ -15,7 +15,7 @@ title: "Schedule a Microsoft Teams Meeting with Roger"
 </article>
 
 <script type="text/javascript">
-  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+  const isDesktop = window.matchMedia("(min-width: 768px) and (min-height: 600px)").matches;
   const dynamicLayout = isDesktop ? "week_view" : "month_view";
 
   (function (C, A, L) {

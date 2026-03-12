@@ -18,7 +18,7 @@ plugins:
 title: Dodge Labs
 description: "Eliminate operational friction and manual workarounds. Roger uses a product mindset to help you diagnose root causes and deliver high-value projects monthly. Schedule your intro call."
 author: Roger Mitchell
-image: /assets/images/open-graph-default.png
+image: "/assets/images/open-graph-default.png"
 social:
   name: Roger Mitchell
   links:

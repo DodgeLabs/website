@@ -22,6 +22,8 @@
   --r-heading-color: var(--color-navy);
   --r-heading-font-weight: 700;
   --r-heading-text-transform: none;
+  
+  --r-code-font: "Roboto Mono", monospace;
 }
 
 .reveal .slides {
@@ -176,11 +178,11 @@ li {
 }
 
 .reveal .slides section pre {
-  width: 100%;
-  background: #22272e !important; /* GitHub Dark Dimmed */
+  width: 90%;
+  background: #22272e !important;
   border: 1px solid #444c56;
-  border-radius: 8px;
-  padding-top: 3.5vh !important; /* Make room for the dots at the top */
+  border-radius: min(1vh, 8px);
+  padding-top: 3.5vh !important;
   position: relative;
   box-shadow: var(--color-shadow-dots) 0px min(0.5vh, 8px) min(1vh, 16px) 0px;
   overflow: hidden;
@@ -221,7 +223,7 @@ li {
   padding-left: min(1vh, 16px) !important;
 }
 
-.reveal .slides section table {
+.reveal .slides section > table {
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0;
@@ -229,7 +231,7 @@ li {
   font-size: 2vh;
 }
 
-.reveal .slides section table thead th {
+.reveal .slides section > table thead th {
   background: var(--color-navy);
   color: var(--color-cream);
   font-family: var(--r-heading-font);
@@ -238,26 +240,26 @@ li {
   border: none;
 }
 
-.reveal .slides section table thead tr:first-child th:first-child {
+.reveal .slides section > table thead tr:first-child th:first-child {
   border-radius: min(1vh, 8px) 0 0 0;
 }
-.reveal .slides section table thead tr:first-child th:last-child {
+.reveal .slides section > table thead tr:first-child th:last-child {
   border-radius: 0 min(1vh, 8px) 0 0;
 }
 
-.reveal .slides section table tbody tr:nth-child(even) {
+.reveal .slides section > table tbody tr:nth-child(even) {
   background-color: color-mix(in srgb, var(--color-navy), transparent 96%);
 }
 
-.reveal .slides section table tbody td,
-.reveal .slides section table tbody tr:last-child td {
+.reveal .slides section > table tbody td,
+.reveal .slides section > table tbody tr:last-child td {
   padding: min(1.5vh, 12px) min(1.5vh, 12px);
   border-bottom: 1px solid
     color-mix(in srgb, var(--color-navy), transparent 90%);
   color: var(--color-text);
 }
 
-.reveal .slides section table tbody tr:hover {
+.reveal .slides section > table tbody tr:hover {
   background-color: color-mix(
     in srgb,
     var(--color-highlight),

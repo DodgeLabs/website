@@ -13,3 +13,17 @@ collections:
 plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-seo-tag
+
+title: Dodge Labs
+description: "Eliminate operational friction and manual workarounds. Roger uses a product mindset to help you diagnose root causes and deliver high-value projects monthly. Schedule your intro call."
+author: Roger Mitchell
+image: /assets/images/open-graph-default.png
+social:
+  name: Roger Mitchell
+  links:
+    - https://www.linkedin.com/in/rogeramitchell/
+    - https://www.linkedin.com/company/dodgelabs/
+    - https://www.strava.com/athletes/2449277
+    - https://github.com/rogeramitchell
+locale: en_US

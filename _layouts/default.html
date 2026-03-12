@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | Dodge Labs</title>
+    
+    {% seo %}
     
     {% if jekyll.environment == 'production' %}
         {% include google-tag-manager-head.html %}

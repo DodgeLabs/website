@@ -110,16 +110,15 @@ console.log(greetUser("Client"));
 
 ---
 
-## Tables
-Tables are great for structured data.
+### Tables
 
 | Feature | Built-in Theme | Custom CSS |
 | :--- | :---: | ---: |
 | Fast Setup | **Yes** | No |
 | Brand Match | No | **Yes** |
 | Effort | Low | Medium |
-
-*(Note: The colons in the markdown define left, center, and right text alignment).*
+| Effort | Low | Medium |
+| Effort | Low | Medium |
 
 ---
 

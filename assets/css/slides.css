@@ -17,7 +17,7 @@
 
   --r-main-font: "Roboto", sans-serif;
   --r-main-color: var(--color-text);
-  
+
   --r-heading-font: "Roboto Slab", serif;
   --r-heading-color: var(--color-navy);
   --r-heading-font-weight: 700;
@@ -29,12 +29,20 @@
   font-size: 3vh;
 }
 
-.reveal .slides section h1, h2, h3, h4, h5, h6 {
+.reveal .slides section h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: left;
   width: 100%;
 }
 
-.reveal .slides section p, ol, ul, li {
+.reveal .slides section p,
+ol,
+ul,
+li {
   text-align: left;
   width: 100%;
 }
@@ -123,7 +131,8 @@
   text-underline-offset: min(1.25vh, 10px);
 }
 
-.reveal .slides section ol, .reveal .slides section ul {
+.reveal .slides section ol,
+.reveal .slides section ul {
   margin: 0 0 0 min(3vh, 32px);
 }
 
@@ -137,7 +146,11 @@
   padding-left: 2vh;
 }
 
-.reveal .slides section ul li:has(input[type="checkbox"]:not(:checked))::before {
+.reveal
+  .slides
+  section
+  ul
+  li:has(input[type="checkbox"]:not(:checked))::before {
   content: "○";
   color: var(--color-navy);
   position: absolute;
@@ -146,7 +159,7 @@
 }
 
 .reveal .slides section ul li:has(input[type="checkbox"]:checked)::before {
-  content: "✓"; 
+  content: "✓";
   color: #32a852;
   position: absolute;
   left: calc(-1 * min(3vh, 32px));
@@ -176,11 +189,15 @@
   left: 1.2vh;
   height: 1.2vh;
   width: 5vh;
-  background-image: radial-gradient(circle, #ff5f56 0.5vh, transparent 0.5vh),
-              radial-gradient(circle, #ffbd2e 0.5vh, transparent 0.5vh),
-              radial-gradient(circle, #27c93f 0.5vh, transparent 0.5vh);
+  background-image:
+    radial-gradient(circle, #ff5f56 0.5vh, transparent 0.5vh),
+    radial-gradient(circle, #ffbd2e 0.5vh, transparent 0.5vh),
+    radial-gradient(circle, #27c93f 0.5vh, transparent 0.5vh);
   background-size: 1.2vh 1.2vh;
-  background-position: 0% center, 50% center, 100% center;
+  background-position:
+    0% center,
+    50% center,
+    100% center;
   background-repeat: no-repeat;
   z-index: 10;
 }
@@ -198,4 +215,49 @@
 
 .reveal .slides section.hljs-ln-code {
   padding-left: min(1vh, 16px) !important;
+}
+
+.reveal .slides section table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 90%;
+  font-size: 2vh;
+}
+
+.reveal .slides section table thead th {
+  background: var(--color-navy);
+  color: var(--color-cream);
+  font-family: var(--r-heading-font);
+  font-weight: 700;
+  padding: min(1.5vh, 12px);
+  border: none;
+}
+
+.reveal .slides section table thead tr:first-child th:first-child {
+  border-radius: min(1vh, 8px) 0 0 0;
+}
+.reveal .slides section table thead tr:first-child th:last-child {
+  border-radius: 0 min(1vh, 8px) 0 0;
+}
+
+.reveal .slides section table tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--color-navy), transparent 96%);
+}
+
+.reveal .slides section table tbody td,
+.reveal .slides section table tbody tr:last-child td {
+  padding: min(1.5vh, 12px) min(1.5vh, 12px);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-navy), transparent 90%);
+  color: var(--color-text);
+}
+
+.reveal .slides section table tbody tr:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--color-highlight),
+    transparent 80%
+  ) !important;
+  transition: background 0.2s ease;
 }

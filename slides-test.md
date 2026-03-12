@@ -80,12 +80,12 @@ Great for showing progress or checklists:
 
 ---
 
-## Blockquotes
+### Blockquotes
 You can use blockquotes to highlight important statements or quotes.
 
 > "If you can dodge a wrench, you can build a presentation."
 > 
-> — Patches O'Houlihan
+> – Patches O'Houlihan
 
 Nested blockquotes also work:
 > Level 1 quote

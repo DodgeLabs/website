@@ -32,19 +32,19 @@
 }
 
 .reveal .slides section h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.reveal .slides section h2,
+.reveal .slides section h3,
+.reveal .slides section h4,
+.reveal .slides section h5,
+.reveal .slides section h6 {
   text-align: left;
   width: 100%;
 }
 
 .reveal .slides section p,
-ol,
-ul,
-li {
+.reveal .slides section ol,
+.reveal .slides section ul,
+.reveal .slides section li {
   text-align: left;
   width: 100%;
 }
@@ -56,7 +56,7 @@ li {
   align-items: center;
   text-align: center;
   height: 100%;
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 
 .reveal .slides section > h1:first-child {
@@ -73,13 +73,13 @@ li {
 }
 
 .reveal .slides section:has(> h2:first-child) {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
   text-align: left;
   height: 100%;
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 
 .reveal .slides section > h2:first-child {
@@ -152,11 +152,7 @@ li {
   padding-left: 2vh;
 }
 
-.reveal
-  .slides
-  section
-  ul
-  li:has(input[type="checkbox"]:not(:checked))::before {
+.reveal .slides section ul li:has(input[type="checkbox"]:not(:checked))::before {
   content: "○";
   color: var(--color-navy);
   position: absolute;
@@ -179,10 +175,10 @@ li {
 
 .reveal .slides section pre {
   width: 90%;
-  background: #22272e !important;
+  background: #22272e;
   border: 1px solid #444c56;
   border-radius: min(1vh, 8px);
-  padding-top: 3.5vh !important;
+  padding-top: 3.5vh;
   position: relative;
   box-shadow: var(--color-shadow-dots) 0px min(0.5vh, 8px) min(1vh, 16px) 0px;
   overflow: hidden;
@@ -215,12 +211,12 @@ li {
   text-align: right;
   color: var(--color-cream);
   vertical-align: top;
-  padding-right: min(1vh, 16px) !important;
+  padding-right: min(1vh, 16px);
   min-width: min(2vh, 32px);
 }
 
 .reveal .slides section.hljs-ln-code {
-  padding-left: min(1vh, 16px) !important;
+  padding-left: min(1vh, 16px);
 }
 
 .reveal .slides section > table {
@@ -264,7 +260,7 @@ li {
     in srgb,
     var(--color-highlight),
     transparent 80%
-  ) !important;
+  );
   transition: background 0.2s ease;
 }
 
@@ -276,4 +272,19 @@ li {
   margin: min(2vh, 16px) auto;
   width: 80%;
   opacity: 0.8;
+}
+
+.reveal .slides section blockquote {
+  background: color-mix(in srgb, var(--color-highlight), transparent 75%);
+  box-shadow: none;
+  width: 90%;
+  padding: min(3vh, 24px) min(3.5vh, 28px);
+  font-style: normal;
+  
+  border-left: min(1vh, 8px) solid var(--color-navy);
+  border-radius: min(1vh, 8px);
+  
+  font-family: var(--r-heading-font);
+  line-height: 1.5;
+  text-align: left;
 }

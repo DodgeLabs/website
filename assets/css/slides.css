@@ -31,6 +31,16 @@
   font-size: 3vh;
 }
 
+.reveal .slides section ::selection {
+  color: var(--color-navy);
+  background-color: color-mix(in srgb, var(--color-highlight), transparent 15%);
+}
+
+.reveal .slides section ::-moz-selection {
+  color: var(--color-navy);
+  background-color: color-mix(in srgb, var(--color-highlight), transparent 15%);
+}
+
 .reveal .slides section h1,
 .reveal .slides section h2,
 .reveal .slides section h3,

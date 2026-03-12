@@ -18,7 +18,7 @@ redirect_from:
 </article>
 
 <script type="text/javascript">
-  const isDesktop = window.matchMedia("(min-width: 768px) and (min-height: 600px)").matches; and (min-height: 600px)").matches;
+  const isDesktop = window.matchMedia("(min-width: 768px) and (min-height: 600px)").matches;
   const dynamicLayout = isDesktop ? "week_view" : "month_view";
 
   (function (C, A, L) {
@@ -59,7 +59,7 @@ redirect_from:
     elementOrSelector: "#my-cal-inline-meeting",
     config: {
       layout: dynamicLayout,
-      // useSlotsViewOnSmallScreen: "true",
+      useSlotsViewOnSmallScreen: "true",
       theme: "light",
     },
     calLink: "rogeramitchell/meeting",
@@ -72,7 +72,7 @@ redirect_from:
       dark: { "cal-brand": "#f7f5f3" },
     },
     hideEventTypeDetails: false,
-    // layout: "week_view",
+    layout: "week_view",
   });
   Cal.config.forwardQueryParams = true;
 </script>

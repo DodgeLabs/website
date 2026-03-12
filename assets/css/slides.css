@@ -261,3 +261,13 @@ li {
   ) !important;
   transition: background 0.2s ease;
 }
+
+.reveal .slides section hr {
+  border: none;
+  border-top: min(0.5vh, 4px) dotted var(--color-red);
+  background: transparent;
+  height: 0;
+  margin: min(2vh, 16px) auto;
+  width: 80%;
+  opacity: 0.8;
+}

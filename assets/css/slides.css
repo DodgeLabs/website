@@ -85,6 +85,10 @@ li {
   position: relative;
   margin: 4vh 0;
   width: auto;
+  text-decoration: underline;
+  text-decoration-color: var(--color-red);
+  text-decoration-thickness: min(1vh, 8px);
+  text-underline-offset: min(4vh, 32px);
 }
 
 .reveal .slides section > :is(h3, h4, h5, h6):first-child {

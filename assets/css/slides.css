@@ -31,6 +31,8 @@
 .reveal .slides {
   width: 100%;
   font-size: 3vh;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .reveal .slides section ::selection {

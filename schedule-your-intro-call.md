@@ -17,13 +17,16 @@ redirect_from:
 # Schedule Your Intro Call
 </header>
 <div class="card__body">
-<div id="my-cal-inline-intro-call" class="cal-embed" style="width: 100%; height: 100%; overflow: scroll">
+<div id="my-cal-inline-intro-call" class="cal-embed" style="width: 100%; overflow: scroll">
 &nbsp;
 </div>
 </div>
 </article>
 
 <script type="text/javascript">
+  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+  const dynamicLayout = isDesktop ? "week_view" : "month_view";
+
   (function (C, A, L) {
     let p = function (a, ar) {
       a.q.push(ar);
@@ -61,7 +64,7 @@ redirect_from:
   Cal.ns["intro-call"]("inline", {
     elementOrSelector: "#my-cal-inline-intro-call",
     config: {
-      layout: "week_view",
+      layout: dynamicLayout,
       useSlotsViewOnSmallScreen: "true",
       theme: "light",
     },
@@ -71,7 +74,7 @@ redirect_from:
   Cal.ns["intro-call"]("ui", {
     theme: "light",
     cssVarsPerTheme: {
-      light: { "cal-brand": "#14133d" },
+      light: { "cal-brand": "#14133d", "cal-bg": "#fcfcfc" },
       dark: { "cal-brand": "#f7f5f3" },
     },
     hideEventTypeDetails: false,

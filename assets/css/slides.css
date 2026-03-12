@@ -29,12 +29,12 @@
   font-size: 3vh;
 }
 
-.reveal h1, h2, h3, h4, h5, h6 {
+.reveal .slides section h1, h2, h3, h4, h5, h6 {
   text-align: left;
   width: 100%;
 }
 
-.reveal p, ol, ul, li {
+.reveal .slides section p, ol, ul, li {
   text-align: left;
   width: 100%;
 }
@@ -52,8 +52,10 @@
 .reveal .slides section > h1:first-child {
   font-size: 10vh;
   position: relative;
-  margin: 5vh 0;
+  margin: min(4vh, 32px) 0;
   width: auto;
+  border-bottom: min(1.5vh, 12px) solid var(--color-red);
+  padding-bottom: min(2vh, 16px);
 }
 
 .reveal .slides section:has(> h1:first-child) p {
@@ -88,6 +90,14 @@
 }
 
 .reveal .slides section > h4:first-child {
+  border-bottom: min(0.75vh, 6px) dotted var(--color-red);
+}
+
+.reveal .slides section > h5:first-child {
+  border-bottom: min(0.5vh, 4px) dashed var(--color-red);
+}
+
+.reveal .slides section > h6:first-child {
   text-decoration: underline;
   text-decoration-color: var(--color-red);
   text-decoration-thickness: min(1vh, 8px);
@@ -95,12 +105,22 @@
   border-bottom: none;
 }
 
-.reveal .slides section > h5:first-child {
-  border-bottom: min(0.75vh, 6px) dotted var(--color-red);
+.reveal .slides section a {
+  color: var(--color-navy);
+  background-color: color-mix(in srgb, var(--color-highlight), transparent 60%);
+  text-decoration: dotted underline;
+  text-decoration-color: var(--color-navy);
+  text-decoration-thickness: min(0.25vh, 2px);
+  text-underline-offset: min(1.25vh, 10px);
+  transition: all 0.2s ease-in-out;
 }
 
-.reveal .slides section > h6:first-child {
-  border-bottom: min(0.5vh, 4px) dashed var(--color-red);
+.reveal .slides section a:hover {
+  color: var(--color-red);
+  background-color: color-mix(in srgb, var(--color-highlight), transparent 45%);
+  text-decoration: dotted underline;
+  text-decoration-thickness: min(0.25vh, 2px);
+  text-underline-offset: min(1.25vh, 10px);
 }
 
 .reveal .slides section ol, .reveal .slides section ul {
@@ -139,6 +159,7 @@
 }
 
 .reveal .slides section pre {
+  width: 100%;
   background: #22272e !important; /* GitHub Dark Dimmed */
   border: 1px solid #444c56;
   border-radius: 8px;
@@ -175,6 +196,6 @@
   min-width: min(2vh, 32px);
 }
 
-.reveal .hljs-ln-code {
+.reveal .slides section.hljs-ln-code {
   padding-left: min(1vh, 16px) !important;
 }

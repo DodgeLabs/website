@@ -195,6 +195,14 @@ ol {
   }
 }
 
+.card--rotate {}
+
+@media (min-width: 768px) or (orientation: landscape) {
+  .card--rotate {
+    display: none;
+  }
+}
+
 .card__header {
 }
 .card__body {

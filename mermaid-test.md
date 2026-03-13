@@ -17,10 +17,16 @@ features:
 ```mermaid
 flowchart TD
     A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+
+    B --> C
+    
+    subgraph Options [Gift Options]
+        %% Secondary Colors: The decision node (C) will use secondaryBorderColor (Red)
+        C{Let me think}
+        C -->|One| D[Laptop]
+        C -->|Two| E[iPhone]
+        C -->|Three| F[fa:fa-car Car]
+    end
 ```
 
 ## Class
@@ -53,10 +59,39 @@ classDiagram
 
 ```mermaid
 sequenceDiagram
+    %% Explicitly declaring participants lets us use the 'actor' shape
+    actor Alice
+    actor John
+    participant Sys as Comms System
+
+    %% Standard synchronous message with activation
+    Alice->>+Sys: Initiate connection
+    Sys-->>-Alice: Connection established
+
+    %% The original messages
     Alice->>+John: Hello John, how are you?
+    
+    %% Spanning Note - This should use your yellow sticky-note variables
+    Note over Alice,John: Alice is experiencing network lag...
+    
     Alice->>+John: John, can you hear me?
-    John-->>-Alice: Hi Alice, I can hear you!
-    John-->>-Alice: I feel great!
+
+    %% A loop block to test how containers look
+    loop Packet Delivery
+        John-->>Sys: Sending acknowledgement
+        Sys--xAlice: Packet dropped
+    end
+
+    %% An alt/else logic block
+    alt Connection Restored
+        Sys-->>Alice: Signal recovered
+        John-->>-Alice: Hi Alice, I can hear you!
+        John-->>-Alice: I feel great!
+    else Connection Failed
+        Sys-->>Alice: Timeout error
+        %% Single-participant note
+        Note right of Alice: Alice drops off the call
+    end
 ```
 
 ## ERD

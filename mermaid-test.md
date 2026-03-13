@@ -294,10 +294,20 @@ kanban
 ## Pie
 
 ```mermaid
-pie title Pets adopted by volunteers
+pie
     "Dogs" : 386
-    "Cats" : 85
-    "Rats" : 15
+    "Cats" : 254
+    "Rabbits" : 85
+    "Guinea Pigs" : 62
+    "Hamsters" : 54
+    "Birds" : 42
+    "Turtles" : 31
+    "Fish" : 28
+    "Lizards" : 22
+    "Snakes" : 18
+    "Ferrets" : 15
+    "Rats" : 12
+    "Chinchillas" : 5
 ```
 
 ## Quadrant

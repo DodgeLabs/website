@@ -1,0 +1,14 @@
+foreignObject:has(.edgeLabel) {
+  background-color: var(--color-highlight) !important;
+
+  .edgeLabel,
+  .labelBkg {
+    background-color: var(--color-highlight) !important;
+  }
+
+  p {
+    margin-inline: auto !important;
+    max-width: max-content;
+    padding: 0 0.5rem;
+  }
+}

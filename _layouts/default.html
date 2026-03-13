@@ -37,6 +37,9 @@
             <p>&copy; {{ site.time | date: '%Y' }} Dodge Labs, LLC.<br>All Rights Reserved.</p>
         </div>
     </footer>
+    {% if page.features.mermaid %}
+      {% include mermaid.html %}
+    {% endif %}
 </body>
 </html>
 {% endcapture %}

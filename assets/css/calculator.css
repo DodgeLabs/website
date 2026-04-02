@@ -1,0 +1,346 @@
+/* ── Calculator: Layout & Fields ── */
+
+.calc-subtitle {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.calc-field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .calc-field-row {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calc-field--grow {
+  flex: 1;
+}
+
+.calc-field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.calc-field input,
+.calc-field select {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-text);
+  box-sizing: border-box;
+  height: 42px;
+}
+
+.calc-field select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.calc-field input:focus,
+.calc-field select:focus {
+  outline: none;
+  border-color: var(--color-navy);
+  box-shadow: 0 0 0 2px rgba(20, 19, 61, 0.15);
+}
+
+.calc-field input[type="number"] {
+  max-width: 140px;
+}
+
+.calc-section-label {
+  margin-top: 32px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.calc-hint {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin: 0 0 12px;
+}
+
+/* ── Section-level warning ── */
+
+.calc-section-warning {
+  font-size: 0.85rem;
+  color: var(--color-red);
+  background: rgba(238, 78, 71, 0.06);
+  border: 1px solid rgba(238, 78, 71, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+/* ── Resource Rows ── */
+
+.calc-resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.calc-resource-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+  padding: 12px;
+  background: var(--color-bg);
+  border-radius: 10px;
+}
+
+.calc-resource-row .calc-field {
+  min-width: 0;
+}
+
+.calc-resource-row .calc-field--label {
+  flex: 1 1 140px;
+}
+
+.calc-resource-row .calc-field--type {
+  flex: 0 1 110px;
+}
+
+.calc-resource-row .calc-field--quantity {
+  flex: 0 1 140px;
+}
+
+.calc-resource-row .calc-field--quantity input {
+  max-width: 100%;
+}
+
+.calc-resource-row .calc-field--allocation {
+  flex: 0 1 100px;
+}
+
+.calc-resource-row .calc-field--allocation input {
+  max-width: 100%;
+}
+
+.calc-resource-row .calc-field--allocation-unit {
+  flex: 0 1 180px;
+}
+
+.calc-resource-row .calc-field--unit-cost {
+  flex: 0 1 110px;
+}
+
+.calc-resource-row .calc-field--unit-cost input {
+  max-width: 100%;
+}
+
+.calc-resource-row .calc-field--cost-unit {
+  flex: 0 1 120px;
+}
+
+/* ── Inline Summary Line ── */
+
+.calc-row-footer {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.calc-row-footer .btn-add {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.calc-resource-row > .calc-row-summary {
+  flex-basis: 100%;
+}
+
+.calc-row-summary {
+  flex: 1 1 0;
+  font-size: 0.8rem;
+  font-family: "Roboto Mono", monospace;
+  color: var(--color-navy);
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Remove Button ── */
+
+.btn-remove-row {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  opacity: 0.5;
+  line-height: 1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.btn-remove-row:hover {
+  opacity: 1;
+  color: var(--color-red);
+  border-color: var(--color-red);
+  background: rgba(238, 78, 71, 0.08);
+}
+
+.calc-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ── Buttons ── */
+
+.calc-field-row > .btn-add {
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.btn-add {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  background: none;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-add:hover {
+  border-color: var(--color-navy);
+  background: rgba(20, 19, 61, 0.04);
+}
+
+
+/* ── Card Footer Totals ── */
+
+.calc-card-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+}
+
+.calc-card-total strong {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.2rem;
+  color: var(--color-navy);
+}
+
+.calc-results-label {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* ── Results Card ── */
+
+.calc-results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.calc-results-grid:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .calc-results-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .calc-results-grid--3col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.calc-result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: var(--color-bg);
+  border-radius: 10px;
+}
+
+.calc-result-item--positive .calc-result-value {
+  color: var(--color-green);
+}
+
+.calc-result-item--negative .calc-result-value {
+  color: var(--color-red);
+}
+
+.calc-result-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.calc-result-value {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+/* ── Per-Task View ── */
+
+.calc-per-task {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ── Toast ── */
+
+.calc-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.calc-toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

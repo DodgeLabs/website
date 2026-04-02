@@ -209,6 +209,7 @@ ol {
 .card__body {
 }
 .card__footer {
+  margin-top: 24px;
 }
 
 .btn-primary {

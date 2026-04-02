@@ -684,6 +684,7 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'calculator_shared',
+      calculatorId: 'process-improvement-roi',
       referenceId: state.referenceId,
       state: state
     });
@@ -724,6 +725,7 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'calculator_loaded',
+          calculatorId: 'process-improvement-roi',
           referenceId: state.referenceId,
           state: state
         });

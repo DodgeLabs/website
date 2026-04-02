@@ -281,18 +281,18 @@
     }
 
     if (au === 'hours_per_week') {
-      parts.push(alloc + ' hrs/week');
+      parts.push(alloc + ' hours/week');
     } else if (au === 'pct') {
       parts.push(alloc + '%' + (isPersonType(row.resourceType) ? ' FTE' : ''));
     } else if (au === 'hours_per_month') {
-      parts.push(alloc + ' hrs/month');
+      parts.push(alloc + ' hours/month');
     }
 
     return parts.join(' \u00D7 ') + ' = ' + fmt(annual) + '/year';
   }
 
   // ── Cost Basis label helpers ──
-  var COST_UNIT_LABELS = { hourly: '/hr', weekly: '/week', monthly: '/month', annual: '/year', per_time: '/time' };
+  var COST_UNIT_LABELS = { hourly: '/hour', weekly: '/week', monthly: '/month', annual: '/year', per_time: '/time' };
 
   // ── Inline summary: per-task row ──
   function perTaskRowSummary(row, annualTaskVol) {
@@ -317,7 +317,7 @@
     } else if (au === 'occurrences') {
       allocPart = alloc + ' @ ' + fmtDecimal(cost) + costLabel;
     } else {
-      var unitLabel = au === 'minutes' ? ' min' : au === 'hours' ? ' hr' : au === 'days' ? (' day' + (alloc !== 1 ? 's' : '')) : '';
+      var unitLabel = au === 'minutes' ? (' minute' + (alloc !== 1 ? 's' : '')) : au === 'hours' ? (' hour' + (alloc !== 1 ? 's' : '')) : au === 'days' ? (' day' + (alloc !== 1 ? 's' : '')) : '';
       allocPart = alloc + unitLabel + ' @ ' + fmtDecimal(cost) + costLabel;
     }
 
@@ -354,7 +354,7 @@
 
     el.innerHTML =
       '<div class="calc-field calc-field--label">' +
-        '<label>Resource / Role</label>' +
+        '<label>Resource / Role Name</label>' +
         '<input type="text" value="' + escAttr(row.resourceLabel) + '" data-field="resourceLabel" placeholder="e.g. Sr. Analyst, Salesforce">' +
       '</div>' +
       '<div class="calc-field calc-field--type">' +
@@ -362,7 +362,7 @@
         '<select data-field="resourceType">' + resourceTypeOptions(row.resourceType) + '</select>' +
       '</div>' +
       '<div class="calc-field calc-field--quantity">' +
-        '<label>Quantity</label>' +
+        '<label>Number of Resources</label>' +
         '<input type="number" min="0" value="' + (row.quantity || '') + '" data-field="quantity" placeholder="1">' +
       '</div>' +
       (isOneTime ? '' : (
@@ -458,7 +458,7 @@
     var html = '';
     // occurrence(s) only for system and vendor
     if (!isPersonType(row.resourceType)) {
-      html += '<option value="occurrences"' + (au === 'occurrences' ? ' selected' : '') + '>occurrence(s)</option>';
+      html += '<option value="occurrences"' + (au === 'occurrences' ? ' selected' : '') + '>time(s)</option>';
     }
     html += '<option value="minutes"' + (au === 'minutes' ? ' selected' : '') + '>minutes</option>';
     html += '<option value="hours"' + (au === 'hours' ? ' selected' : '') + '>hours</option>';
@@ -490,7 +490,7 @@
 
     el.innerHTML =
       '<div class="calc-field calc-field--label">' +
-        '<label>Resource / Role</label>' +
+        '<label>Resource / Role Name</label>' +
         '<input type="text" value="' + escAttr(row.resourceLabel) + '" data-field="resourceLabel" placeholder="e.g. GPT-4o API, DocuSign envelope">' +
       '</div>' +
       '<div class="calc-field calc-field--type">' +
@@ -498,7 +498,7 @@
         '<select data-field="resourceType">' + resourceTypeOptions(row.resourceType) + '</select>' +
       '</div>' +
       '<div class="calc-field calc-field--quantity">' +
-        '<label>Quantity</label>' +
+        '<label>Number of Resources</label>' +
         '<input type="number" min="0" value="' + (row.quantity || '') + '" data-field="quantity" placeholder="1">' +
       '</div>' +
       '<div class="calc-field calc-field--allocation">' +

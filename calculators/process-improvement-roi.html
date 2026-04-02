@@ -1,0 +1,238 @@
+---
+layout: main-wide
+title: "Process Improvement ROI Calculator"
+---
+
+<link rel="stylesheet" href="/assets/css/calculator.css">
+
+<!-- Setup -->
+<article class="card" id="card-setup">
+<header class="card__header">
+  <h1>Process Improvement ROI Calculator</h1>
+  <p>Estimate the economic value of improving a business process.</p>
+</header>
+
+<div class="card__body" style="margin-top: 16px;">
+  <div class="calc-field-row">
+    <div class="calc-field calc-field--grow">
+      <label for="taskName">What process are you improving?</label>
+      <input type="text" id="taskName" placeholder="e.g. Client onboarding, Invoice processing">
+    </div>
+    <button type="button" class="btn-add" id="btnStartOver">Reset & Start Over</button>
+  </div>
+</div>
+</article>
+
+<!-- Current State -->
+<article class="card" id="card-current">
+<header class="card__header">
+  <h2>Current State</h2>
+  <p>What does this process cost you today?</p>
+</header>
+
+<div class="card__body">
+  <h3 class="calc-section-label">Process Volume</h3>
+  <div class="calc-resource-row">
+    <div class="calc-field calc-field--quantity">
+      <label>Number of Times</label>
+      <input type="number" id="currentTaskVolumeValue" min="0" placeholder="e.g. 20">
+    </div>
+    <div class="calc-field calc-field--allocation-unit">
+      <label>Frequency</label>
+      <select id="currentTaskVolumeUnit">
+        <option value="day">times per day</option>
+        <option value="week" selected>times per week</option>
+        <option value="month">times per month</option>
+        <option value="year">times per year</option>
+      </select>
+    </div>
+    <p class="calc-row-summary" id="currentVolumeSummary"></p>
+  </div>
+
+  <h3 class="calc-section-label">Recurring Costs</h3>
+  <p class="calc-hint">People, systems, and vendors with a cost that exists regardless of how often the process occurs.</p>
+  <div id="currentRecurring" class="calc-resource-list"></div>
+  <button type="button" class="btn-add" data-target="currentRecurring">+ Add recurring cost</button>
+
+  <h3 class="calc-section-label">Per-Process Run Costs</h3>
+  <p class="calc-hint">Costs that occur every time the process runs.</p>
+  <div id="currentPerTaskWarning" class="calc-section-warning" style="display:none;">Enter frequency above in Process Volume to calculate per-process run costs.</div>
+  <div id="currentPerTask" class="calc-resource-list"></div>
+  <button type="button" class="btn-add" data-target="currentPerTask">+ Add per-process run cost</button>
+</div>
+
+<footer class="card__footer">
+  <div class="calc-card-total">
+    <span>Annualized cost:</span>
+    <strong id="currentAnnualCostDisplay">$0</strong>
+  </div>
+</footer>
+</article>
+
+<!-- Transition -->
+<article class="card" id="card-transition">
+<header class="card__header">
+  <h2>Transition</h2>
+  <p>What will it cost to make the change?</p>
+</header>
+
+<div class="card__body">
+  <h3 class="calc-section-label">Transition Period</h3>
+  <div class="calc-resource-row">
+    <div class="calc-field calc-field--quantity">
+      <label>Number of Periods</label>
+      <input type="number" id="transitionDurationValue" min="0" value="4">
+    </div>
+    <div class="calc-field calc-field--allocation-unit">
+      <label>Period Type</label>
+      <select id="transitionDurationUnit">
+        <option value="weeks" selected>weeks</option>
+        <option value="months">months</option>
+      </select>
+    </div>
+  </div>
+
+  <h3 class="calc-section-label">Transition Costs</h3>
+  <div id="transitionCosts" class="calc-resource-list"></div>
+  <button type="button" class="btn-add" data-target="transitionCosts">+ Add cost</button>
+</div>
+
+<footer class="card__footer">
+  <div class="calc-card-total">
+    <span>Total transition cost:</span>
+    <strong id="totalTransitionCostDisplay">$0</strong>
+  </div>
+</footer>
+</article>
+
+<!-- Future State -->
+<article class="card" id="card-future">
+<header class="card__header">
+  <h2>Future State</h2>
+  <p>What will this process cost you improve it?</p>
+</header>
+
+<div class="card__body">
+  <h3 class="calc-section-label">Process Volume</h3>
+  <div class="calc-resource-row">
+    <div class="calc-field calc-field--quantity">
+      <label>Number of Times</label>
+      <input type="number" id="futureTaskVolumeValue" min="0" placeholder="e.g. 20">
+    </div>
+    <div class="calc-field calc-field--allocation-unit">
+      <label>Frequency</label>
+      <select id="futureTaskVolumeUnit">
+        <option value="day">times per day</option>
+        <option value="week" selected>times per week</option>
+        <option value="month">times per month</option>
+        <option value="year">times per year</option>
+      </select>
+    </div>
+    <button type="button" class="btn-add" id="btnCopyFrequency">Copy from current state</button>
+    <p class="calc-row-summary" id="futureVolumeSummary"></p>
+  </div>
+
+  <h3 class="calc-section-label">Recurring Costs</h3>
+  <p class="calc-hint">People, systems, and vendors with a cost that exists regardless of how often the process occurs.</p>
+  <div id="futureRecurring" class="calc-resource-list"></div>
+  <div class="calc-button-row">
+    <button type="button" class="btn-add" data-target="futureRecurring">+ Add recurring cost</button>
+    <button type="button" class="btn-add" id="btnCopyRecurring">Copy from current state</button>
+  </div>
+
+  <h3 class="calc-section-label">Per-Process Run Costs</h3>
+  <p class="calc-hint">Costs that occur every time the process runs.</p>
+  <div id="futurePerTaskWarning" class="calc-section-warning" style="display:none;">Enter frequency above in Process Volume to calculate per-process run costs.</div>
+  <div id="futurePerTask" class="calc-resource-list"></div>
+  <div class="calc-button-row">
+    <button type="button" class="btn-add" data-target="futurePerTask">+ Add per-process run cost</button>
+    <button type="button" class="btn-add" id="btnCopyPerTask">Copy from current state</button>
+  </div>
+</div>
+
+<footer class="card__footer">
+  <div class="calc-card-total">
+    <span>Annualized cost:</span>
+    <strong id="futureAnnualCostDisplay">$0</strong>
+  </div>
+</footer>
+</article>
+
+<!-- Results -->
+<article class="card" id="card-results">
+<header class="card__header">
+  <h2>Results</h2>
+</header>
+
+<div class="card__body">
+  <h3 class="calc-results-label">Summary</h3>
+  <div class="calc-results-grid calc-results-grid--3col">
+    <div class="calc-result-item">
+      <span class="calc-result-label">Current Annual Cost</span>
+      <span class="calc-result-value" id="resultCurrentAnnual">$0</span>
+    </div>
+    <div class="calc-result-item">
+      <span class="calc-result-label">Transition Cost</span>
+      <span class="calc-result-value" id="resultTotalTransition">$0</span>
+    </div>
+    <div class="calc-result-item">
+      <span class="calc-result-label">Future Annual Cost</span>
+      <span class="calc-result-value" id="resultFutureAnnual">$0</span>
+    </div>
+  </div>
+
+  <div class="calc-results-grid">
+    <div class="calc-result-item calc-result-item--directional">
+      <span class="calc-result-label">Gross Annual Savings</span>
+      <span class="calc-result-value" id="resultGrossAnnualSavings">$0</span>
+    </div>
+    <div class="calc-result-item calc-result-item--directional">
+      <span class="calc-result-label">Net Year-1 Savings</span>
+      <span class="calc-result-value" id="resultNetYear1">$0</span>
+    </div>
+  </div>
+
+  <div class="calc-results-grid">
+    <div class="calc-result-item calc-result-item--directional">
+      <span class="calc-result-label">ROI</span>
+      <span class="calc-result-value" id="resultROI">&mdash;</span>
+    </div>
+    <div class="calc-result-item calc-result-item--directional">
+      <span class="calc-result-label">Payback Period</span>
+      <span class="calc-result-value" id="resultPaybackPeriod">&mdash;</span>
+    </div>
+  </div>
+
+  <div class="calc-per-task" id="perTaskView" style="display:none;">
+    <h3 class="calc-results-label">Per-Task View</h3>
+    <div class="calc-results-grid">
+      <div class="calc-result-item">
+        <span class="calc-result-label">Current Cost Per-Task</span>
+        <span class="calc-result-value" id="resultCurrentPerTask">$0</span>
+      </div>
+      <div class="calc-result-item">
+        <span class="calc-result-label">Future Cost Per-Task</span>
+        <span class="calc-result-value" id="resultFuturePerTask">$0</span>
+      </div>
+    </div>
+    <div class="calc-results-grid">
+      <div class="calc-result-item calc-result-item--directional">
+        <span class="calc-result-label">Gross Savings Per-Task</span>
+        <span class="calc-result-value" id="resultSavingsPerTask">$0</span>
+      </div>
+      <div class="calc-result-item calc-result-item--directional">
+        <span class="calc-result-label">% Improvement</span>
+        <span class="calc-result-value" id="resultPctImprovement">&mdash;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="card__footer">
+  <h3 class="calc-results-label">Share Calculator & Results</h3>
+  <p>Click the button below to copy the link to your calculator and results.</p>
+  <button type="button" class="btn-add" id="btnShare">Copy Link</button>
+</footer>
+</article>
+
+<script src="/assets/js/process-improvement-roi.js"></script>

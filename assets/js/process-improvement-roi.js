@@ -343,17 +343,6 @@
     } catch (e) { return null; }
   }
 
-  // ── Visitor ID ──
-  function getOrCreateVisitorId() {
-    var key = 'dl_visitor_id';
-    var id = localStorage.getItem(key);
-    if (!id) {
-      id = 'v_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 8);
-      localStorage.setItem(key, id);
-    }
-    return id;
-  }
-
   // ── Render: recurring row ──
   function renderRecurringRow(container, rows, index) {
     var row = rows[index];
@@ -692,23 +681,11 @@
       showToast('URL updated \u2014 copy it from the address bar');
     }
 
-    var m = calcMetrics();
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'calculator_shared',
       referenceId: state.referenceId,
-      taskName: String(state.taskName || '').slice(0, 100),
-      currency: state.currency,
-      currentAnnualCost: m.currentAnnualCost,
-      futureAnnualCost: m.futureAnnualCost,
-      grossAnnualSavings: m.grossAnnualSavings,
-      totalTransitionCost: m.totalTransitionCost,
-      netYear1Value: m.netYear1Value,
-      recurringCountCurrent: state.currentState.recurringCosts.length,
-      perTaskCountCurrent: state.currentState.perTaskCosts.length,
-      recurringCountFuture: state.futureState.recurringCosts.length,
-      perTaskCountFuture: state.futureState.perTaskCosts.length,
-      visitorId: getOrCreateVisitorId()
+      state: state
     });
   }
 
@@ -748,9 +725,7 @@
         window.dataLayer.push({
           event: 'calculator_loaded',
           referenceId: state.referenceId,
-          taskName: String(state.taskName || '').slice(0, 100),
-          currency: state.currency,
-          visitorId: getOrCreateVisitorId()
+          state: state
         });
       }
     }

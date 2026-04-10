@@ -99,17 +99,27 @@
   }
 
   // ── Annualization: recurring row ──
+  var HOURS_PER_YEAR = 2080;
+  var HOURS_PER_WEEK = HOURS_PER_YEAR / 52;
+  var HOURS_PER_MONTH = HOURS_PER_YEAR / 12;
+
   // Annualize a single unit cost based on cost basis
   function annualizeUnitCost(cost, cu) {
-    if (cu === 'hourly') return cost * 2080;
+    if (cu === 'hourly') return cost * HOURS_PER_YEAR;
     if (cu === 'weekly') return cost * 52;
     if (cu === 'monthly') return cost * 12;
     if (cu === 'annual') return cost;
     return 0;
   }
 
-  var HOURS_PER_WEEK = 40;
-  var HOURS_PER_MONTH = 40 * (30 / 7);
+  // Convert any cost basis to an hourly rate
+  function toHourlyRate(cost, cu) {
+    if (cu === 'hourly') return cost;
+    if (cu === 'weekly') return cost / HOURS_PER_WEEK;
+    if (cu === 'monthly') return cost / HOURS_PER_MONTH;
+    if (cu === 'annual') return cost / HOURS_PER_YEAR;
+    return 0;
+  }
 
   function annualizeRecurringRow(row) {
     var q = row.quantity || 0;
@@ -147,16 +157,21 @@
     var au = row.allocationUnit;
     var cu = row.costUnit || 'hourly';
 
-    // Convert allocation to cost using costUnit, then multiply by quantity
-    if (cu === 'hourly') {
-      if (au === 'minutes') return q * (alloc / 60) * cost;
-      if (au === 'hours') return q * alloc * cost;
-      if (au === 'days') return q * alloc * 8 * cost;
-      // occurrences with hourly — treat alloc as hours
-      return q * alloc * cost;
+    // per_time: flat charge per occurrence. If allocation is a time unit
+    // (minutes/hours/days), ignore its value — "per time" implies one charge
+    // per task regardless of duration.
+    if (cu === 'per_time') {
+      if (au === 'occurrences') return q * alloc * cost;
+      return q * cost;
     }
-    // weekly, monthly, annual, per_time — flat: quantity × alloc × cost
-    return q * alloc * cost;
+
+    // All other cost bases: convert to an hourly rate, then apply time allocation
+    var hourly = toHourlyRate(cost, cu);
+    if (au === 'minutes') return q * (alloc / 60) * hourly;
+    if (au === 'hours') return q * alloc * hourly;
+    if (au === 'days') return q * alloc * 8 * hourly;
+    // Fallback (e.g., occurrences with a time-based basis) — treat alloc as hours
+    return q * alloc * hourly;
   }
 
   function annualizePerTaskRow(row, annualTaskVol) {
@@ -198,7 +213,7 @@
   // ── Transition cost: scale recurring rows to transition duration ──
   function transitionWeeks() {
     var v = state.transition.durationValue || 0;
-    return state.transition.durationUnit === 'months' ? v * 4.33 : v;
+    return state.transition.durationUnit === 'months' ? v * (52 / 12) : v;
   }
 
   function transitionCostForArray(rows) {
@@ -541,7 +556,7 @@
           } else {
             row[field] = input.value;
           }
-          // Re-render row if resourceType or allocationUnit changed
+          // Re-render row if resourceType, allocationUnit, or costUnit changed
           if (field === 'resourceType') {
             if (isPersonType(row.resourceType)) {
               if (row.allocationUnit === 'occurrences') row.allocationUnit = 'minutes';
@@ -549,6 +564,10 @@
             }
             renderPerTaskList(container, rows, annualTaskVol);
           } else if (field === 'allocationUnit') {
+            renderPerTaskList(container, rows, annualTaskVol);
+          } else if (field === 'costUnit') {
+            // per_time cost basis only makes sense with an occurrence count
+            if (row.costUnit === 'per_time') row.allocationUnit = 'occurrences';
             renderPerTaskList(container, rows, annualTaskVol);
           } else {
             var summaryEl = el.querySelector('.calc-row-summary');
@@ -825,6 +844,21 @@
       state.referenceId = id;
       console.log('referenceId set: ' + id);
     };
+
+    // Dev/QA helper: paste a full state object into the console to load it.
+    // Usage: setCalculatorState({ v: 1, taskName: '...', ... })
+    window.setCalculatorState = function (next) {
+      if (!next || next.v !== 1) {
+        console.error('setCalculatorState: expected a v:1 state object');
+        return;
+      }
+      state = next;
+      hydrateUI();
+      console.log('calculator state loaded');
+    };
+
+    // Dev/QA helper: read the current state as a plain object.
+    window.getCalculatorState = function () { return state; };
   }
 
   if (document.readyState === 'loading') {

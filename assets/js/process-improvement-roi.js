@@ -157,8 +157,13 @@
     var au = row.allocationUnit;
     var cu = row.costUnit || 'hourly';
 
-    // per_time: flat charge per occurrence, no time conversion
-    if (cu === 'per_time') return q * alloc * cost;
+    // per_time: flat charge per occurrence. If allocation is a time unit
+    // (minutes/hours/days), ignore its value — "per time" implies one charge
+    // per task regardless of duration.
+    if (cu === 'per_time') {
+      if (au === 'occurrences') return q * alloc * cost;
+      return q * cost;
+    }
 
     // All other cost bases: convert to an hourly rate, then apply time allocation
     var hourly = toHourlyRate(cost, cu);
@@ -551,7 +556,7 @@
           } else {
             row[field] = input.value;
           }
-          // Re-render row if resourceType or allocationUnit changed
+          // Re-render row if resourceType, allocationUnit, or costUnit changed
           if (field === 'resourceType') {
             if (isPersonType(row.resourceType)) {
               if (row.allocationUnit === 'occurrences') row.allocationUnit = 'minutes';
@@ -559,6 +564,10 @@
             }
             renderPerTaskList(container, rows, annualTaskVol);
           } else if (field === 'allocationUnit') {
+            renderPerTaskList(container, rows, annualTaskVol);
+          } else if (field === 'costUnit') {
+            // per_time cost basis only makes sense with an occurrence count
+            if (row.costUnit === 'per_time') row.allocationUnit = 'occurrences';
             renderPerTaskList(container, rows, annualTaskVol);
           } else {
             var summaryEl = el.querySelector('.calc-row-summary');
@@ -835,6 +844,21 @@
       state.referenceId = id;
       console.log('referenceId set: ' + id);
     };
+
+    // Dev/QA helper: paste a full state object into the console to load it.
+    // Usage: setCalculatorState({ v: 1, taskName: '...', ... })
+    window.setCalculatorState = function (next) {
+      if (!next || next.v !== 1) {
+        console.error('setCalculatorState: expected a v:1 state object');
+        return;
+      }
+      state = next;
+      hydrateUI();
+      console.log('calculator state loaded');
+    };
+
+    // Dev/QA helper: read the current state as a plain object.
+    window.getCalculatorState = function () { return state; };
   }
 
   if (document.readyState === 'loading') {

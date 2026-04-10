@@ -99,17 +99,27 @@
   }
 
   // ── Annualization: recurring row ──
+  var HOURS_PER_YEAR = 2080;
+  var HOURS_PER_WEEK = HOURS_PER_YEAR / 52;
+  var HOURS_PER_MONTH = HOURS_PER_YEAR / 12;
+
   // Annualize a single unit cost based on cost basis
   function annualizeUnitCost(cost, cu) {
-    if (cu === 'hourly') return cost * 2080;
+    if (cu === 'hourly') return cost * HOURS_PER_YEAR;
     if (cu === 'weekly') return cost * 52;
     if (cu === 'monthly') return cost * 12;
     if (cu === 'annual') return cost;
     return 0;
   }
 
-  var HOURS_PER_WEEK = 40;
-  var HOURS_PER_MONTH = 40 * (30 / 7);
+  // Convert any cost basis to an hourly rate
+  function toHourlyRate(cost, cu) {
+    if (cu === 'hourly') return cost;
+    if (cu === 'weekly') return cost / HOURS_PER_WEEK;
+    if (cu === 'monthly') return cost / HOURS_PER_MONTH;
+    if (cu === 'annual') return cost / HOURS_PER_YEAR;
+    return 0;
+  }
 
   function annualizeRecurringRow(row) {
     var q = row.quantity || 0;
@@ -147,16 +157,16 @@
     var au = row.allocationUnit;
     var cu = row.costUnit || 'hourly';
 
-    // Convert allocation to cost using costUnit, then multiply by quantity
-    if (cu === 'hourly') {
-      if (au === 'minutes') return q * (alloc / 60) * cost;
-      if (au === 'hours') return q * alloc * cost;
-      if (au === 'days') return q * alloc * 8 * cost;
-      // occurrences with hourly — treat alloc as hours
-      return q * alloc * cost;
-    }
-    // weekly, monthly, annual, per_time — flat: quantity × alloc × cost
-    return q * alloc * cost;
+    // per_time: flat charge per occurrence, no time conversion
+    if (cu === 'per_time') return q * alloc * cost;
+
+    // All other cost bases: convert to an hourly rate, then apply time allocation
+    var hourly = toHourlyRate(cost, cu);
+    if (au === 'minutes') return q * (alloc / 60) * hourly;
+    if (au === 'hours') return q * alloc * hourly;
+    if (au === 'days') return q * alloc * 8 * hourly;
+    // Fallback (e.g., occurrences with a time-based basis) — treat alloc as hours
+    return q * alloc * hourly;
   }
 
   function annualizePerTaskRow(row, annualTaskVol) {
@@ -198,7 +208,7 @@
   // ── Transition cost: scale recurring rows to transition duration ──
   function transitionWeeks() {
     var v = state.transition.durationValue || 0;
-    return state.transition.durationUnit === 'months' ? v * 4.33 : v;
+    return state.transition.durationUnit === 'months' ? v * (52 / 12) : v;
   }
 
   function transitionCostForArray(rows) {

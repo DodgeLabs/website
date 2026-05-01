@@ -16,7 +16,7 @@ title: "Schedule a Phone Call with Roger"
 
 <script type="text/javascript">
   const isDesktop = window.matchMedia("(min-width: 768px) and (min-height: 600px)").matches;
-  const dynamicLayout = isDesktop ? "week_view" : "month_view";
+  const dynamicLayout = isDesktop ? "layout_view" : "month_view";
 
   (function (C, A, L) {
     let p = function (a, ar) {

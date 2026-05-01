@@ -16,7 +16,7 @@ title: "Schedule a Google Meet with Roger"
 
 <script type="text/javascript">
   const isDesktop = window.matchMedia("(min-width: 768px) and (min-height: 600px)").matches;
-  const dynamicLayout = isDesktop ? "week_view" : "month_view";
+  const dynamicLayout = isDesktop ? "layout_view" : "month_view";
 
   (function (C, A, L) {
     let p = function (a, ar) {
@@ -73,6 +73,6 @@ title: "Schedule a Google Meet with Roger"
       dark: { "cal-brand": "#f7f5f3" },
     },
     hideEventTypeDetails: false,
-    layout: "week_view",
+    layout: "layout_view",
   });
 </script>

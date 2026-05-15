@@ -15,7 +15,7 @@ redirect_from:
 &nbsp;
 </div>
 </div>
-<footer class="card__footer" style="display: none;">
+<footer id="cal-fallback-footer" class="card__footer" style="display: none;">
 <p><strong>Is the scheduler not loading?</strong></p>
 <p>Your browser or network might be blocking this content.</p>
 <a href="https://cal.com/rogeramitchell/meeting" class="btn-primary">
@@ -84,21 +84,30 @@ Schedule on Cal.com
   });
   Cal.config.forwardQueryParams = true;
 
-  const footer = document.querySelector('footer.card__footer');
+  const fallbackFooter = document.getElementById('cal-fallback-footer');
   let calSuccessfullyLoaded = false;
 
-  window.addEventListener("message", (event) => {
-    if (event.origin.includes("cal.com") || (event.data && event.data.origin && event.data.origin.includes("cal.com"))) {
+  Cal("on", {
+    action: "*",
+    callback: () => {
       calSuccessfullyLoaded = true;
     }
   });
 
-  setTimeout(() => {
+  window.addEventListener("message", (event) => {
+    try {
+      if (typeof event.origin === "string" && event.origin.includes("cal.com")) {
+        calSuccessfullyLoaded = true;
+      }
+    } catch (e) {}
+  });
+
+  window.setTimeout(() => {
     const calContainer = document.getElementById("my-cal-inline-meeting");
     const iframeExists = calContainer && calContainer.querySelector("iframe");
     
-    if ((!iframeExists || !calSuccessfullyLoaded) && footer) {
-      footer.removeAttribute("style");
+    if ((!iframeExists || !calSuccessfullyLoaded) && fallbackFooter) {
+      fallbackFooter.removeAttribute("style");
     }
-  }, 3000);
+  }, 5000);
 </script>

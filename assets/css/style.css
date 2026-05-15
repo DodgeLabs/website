@@ -264,6 +264,26 @@ ol {
   height: auto;
 }
 
+.cal-loader-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: var(--color-navy);
+}
+
+.cal-loader {
+  width: 56px;
+  height: auto;
+  animation: dodgeBreathe 2.5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes dodgeBreathe {
+  0%, 100% { transform: scale(0.9); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
 .cal-fallback-message {
   color: var(--color-text);
 }

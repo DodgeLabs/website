@@ -95,8 +95,8 @@ Schedule
     const calContainer = document.getElementById('my-cal-inline-meeting');
     const iframeExists = calContainer && calContainer.querySelector('iframe');
     
-    if ((!iframeExists || !calSuccessfullyLoaded) && fallbackFooter) {
-      fallbackFooter.style = ""; 
+    if ((!iframeExists || !calSuccessfullyLoaded) && footer) {
+      footer.style = ""; 
     }
   }, 3000);
 </script>

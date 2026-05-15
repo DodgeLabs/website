@@ -12,6 +12,12 @@ title: "Schedule a Zoom Meeting with Roger"
 &nbsp;
 </div>
 </div>
+<footer class="card__footer cal-fallback" hidden>
+<a href="https://cal.com/rogeramitchell/meeting?location=%7B%22value%22%3A%22integrations%3Azoom%22%2C%22optionValue%22%3A%22%22%7D" target="_blank" rel="noopener" class="btn-secondary">
+Schedule via Cal.com
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
+</a>
+</footer>
 </article>
 
 <script type="text/javascript">
@@ -76,3 +82,5 @@ title: "Schedule a Zoom Meeting with Roger"
     layout: "layout_view",
   });
 </script>
+
+{% include cal-fallback.html %}

@@ -235,8 +235,47 @@ ol {
   fill: currentColor;
 }
 
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-navy);
+  text-decoration: none;
+  padding: 14px 22px;
+  border: 2px solid var(--color-navy);
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-top: 16px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.btn-secondary svg {
+  width: 16px;
+  margin-left: 12px;
+  fill: currentColor;
+}
+
 .cal-embed iframe {
   height: auto;
+}
+
+.cal-fallback-message {
+  color: var(--color-text);
+}
+
+.cal-fallback-message strong {
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: 8px;
+}
+
+.cal-fallback-message p {
+  margin: 0;
 }
 
 @media (min-width: 768px) and (min-height: 600px) {

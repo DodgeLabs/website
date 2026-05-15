@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  (function () {
+    var container = document.querySelector(".cal-embed");
+    var footer = document.querySelector(".cal-fallback");
+    if (!container || !footer) return;
+
+    setTimeout(function () {
+      if (!container.querySelector("iframe")) {
+        container.innerHTML =
+          '<div class="cal-fallback-message">' +
+          "<strong>It looks like your browser or network is blocking the embedded scheduler.</strong>" +
+          "<p>Use the button below to schedule directly on Cal.com.</p>" +
+          "</div>";
+        footer.hidden = false;
+      }
+    }, 2500);
+  })();
+</script>

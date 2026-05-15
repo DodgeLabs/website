@@ -16,8 +16,10 @@ redirect_from:
 </div>
 </div>
 <footer class="card__footer" style="display: none;">
+<p><strong>Is the scheduler not loading?</strong></p>
+<p>Your browser or network might be blocking this content.</p>
 <a href="https://cal.com/rogeramitchell/meeting" class="btn-primary">
-Schedule
+Schedule on Cal.com
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
 </a>
 </footer>
@@ -85,18 +87,18 @@ Schedule
   const footer = document.querySelector('footer.card__footer');
   let calSuccessfullyLoaded = false;
 
-  window.addEventListener('message', (event) => {
+  window.addEventListener("message", (event) => {
     if (event.origin.includes("cal.com") || (event.data && event.data.origin && event.data.origin.includes("cal.com"))) {
       calSuccessfullyLoaded = true;
     }
   });
 
   setTimeout(() => {
-    const calContainer = document.getElementById('my-cal-inline-meeting');
-    const iframeExists = calContainer && calContainer.querySelector('iframe');
+    const calContainer = document.getElementById("my-cal-inline-meeting");
+    const iframeExists = calContainer && calContainer.querySelector("iframe");
     
     if ((!iframeExists || !calSuccessfullyLoaded) && footer) {
-      footer.style = ""; 
+      footer.removeAttribute("style");
     }
   }, 3000);
 </script>

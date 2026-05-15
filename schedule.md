@@ -84,7 +84,6 @@ Schedule on Cal.com
   });
   Cal.config.forwardQueryParams = true;
 
-  const fallbackFooter = document.getElementById('cal-fallback-footer');
   let calSuccessfullyLoaded = false;
 
   Cal("on", {
@@ -104,6 +103,7 @@ Schedule on Cal.com
 
   window.setTimeout(() => {
     const calContainer = document.getElementById("my-cal-inline-meeting");
+    const fallbackFooter = document.getElementById("cal-fallback-footer");
     const iframeExists = calContainer && calContainer.querySelector("iframe");
     
     if ((!iframeExists || !calSuccessfullyLoaded) && fallbackFooter) {

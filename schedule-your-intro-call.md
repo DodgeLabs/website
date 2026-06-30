@@ -10,6 +10,7 @@ redirect_from:
   - /get-a-second-opinion-on-salesforce-licenses
   - /strategy-session
   - /quick-take
+  - /intro
 ---
 
 <article class="card">

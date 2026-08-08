@@ -4,6 +4,7 @@ title: "Schedule a Zoom, Google Meet, Microsoft Teams, or Phone Call with Roger"
 description: "Schedule virtual meetings or phone calls with Roger, choosing from various durations for Zoom, Google Meet, Microsoft Teams, and phone options to suit your needs."
 redirect_from:
   - /schedule/intensives
+  - /schedule/zoom
 ---
 
 <article class="card">

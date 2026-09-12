@@ -4,24 +4,7 @@ title: Subscribe to the Newsletter
 description: "Only Done Right — a short email for operators in financial services, enterprise nonprofits, and professional services. One idea at a time on cutting operational friction."
 ---
 
-<article class="card">
-<header class="card__header" markdown="1">
-# Only Done Right by Roger Mitchell
-</header>
-
-<div class="card__body" markdown="1">
-Free yourself from workarounds so you can actually ship things that move your organization forward.
-
-This is a short email for operators. Advice, insights, and tricks delivered the same way I’d share them on call with my clients.
-
-When I have something worth your time, it lands in your inbox. Read it, use it, or delete it.
-</div>
-
-<div class="card__body">
-{% include hubspot-newsletter-form.html %}
-<p class="form-note">No ads, no spam, no bullshit. Unsubscribe whenever you’d like.</p>
-</div>
-</article>
+{% include subscribe-card.html %}
 
 <article class="card">
 <header class="card__header" markdown="1">

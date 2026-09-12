@@ -27,3 +27,8 @@ social:
     - https://www.strava.com/athletes/2449277
     - https://github.com/rogeramitchell
 locale: en_US
+
+hubspot:
+  region: na1
+  portal_id: "48533133"
+  newsletter_form_id: "efb4019c-ed6d-49e2-b44c-798629fdf5b3"

@@ -1,0 +1,16 @@
+{%- assign photo = site.static_files | where: "path", "/assets/images/roger-mitchell.jpg" | first -%}
+{%- assign about = site.data.navigation.primary | where: "label", "About" | first -%}
+<div class="author">
+    {%- if photo %}
+    <img class="author__photo" src="/assets/images/roger-mitchell.jpg" width="96" height="96" alt="Roger Mitchell">
+    {%- else %}
+    <div class="author__photo photo-placeholder">Headshot missing</div>
+    {%- endif %}
+    <div class="author__text">
+        <p class="author__name">Roger Mitchell</p>
+        <p>I’m a solo consultant. I help financial services firms, enterprise nonprofits, and professional services teams kill operational friction and build a habit of shipping useful work.</p>
+        {%- if about.live %}
+        <p><a href="{{ about.url }}">More about how I work</a></p>
+        {%- endif %}
+    </div>
+</div>

@@ -1,0 +1,69 @@
+primary:
+  - label: Nonprofits
+    url: /nonprofits/
+    live: false
+  - label: Audience Building
+    url: /audience-building/
+    live: false
+  - label: About
+    url: /about/
+    live: false
+  - label: Newsletter
+    url: /newsletter/
+    live: true
+  - label: Schedule
+    url: /schedule-your-intro-call/
+    live: true
+
+cta:
+  subscribe:
+    label: Subscribe
+    title: Subscribe
+    url: /subscribe-to-newsletter/
+    pitch: A short email for operators.
+    live: true
+
+footer:
+  - title: Work
+    links:
+      - label: Nonprofits
+        url: /nonprofits/
+        live: false
+      - label: Audience Building
+        url: /audience-building/
+        live: false
+  - title: About
+    links:
+      - label: About Roger
+        url: /about/
+        live: false
+      - label: FAQ
+        url: /faq/
+        live: false
+  - title: Writing
+    links:
+      - label: Newsletter
+        url: /newsletter/
+        live: true
+      - label: Start Here
+        url: /start-here/
+        live: false
+      - label: Modern Work Club
+        url: /modern-work-club/
+        live: false
+  - title: Connect
+    links:
+      - label: Schedule an intro call
+        url: /schedule-your-intro-call/
+        live: true
+      - label: LinkedIn
+        url: https://www.linkedin.com/in/rogeramitchell/
+        external: true
+        live: true
+
+meta:
+  locale: Washington Crossing, PA — Princeton area
+  links:
+    - label: Privacy
+      url: /privacy/
+      live: false

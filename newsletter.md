@@ -2,7 +2,6 @@
 layout: main
 title: Newsletter
 redirect_from:
-  - /subscribe-to-newsletter
   - /newsletter-subscriber-motivations
 ---
 {% assign sorted_newsletters = site.newsletters | sort: 'date' | reverse %}

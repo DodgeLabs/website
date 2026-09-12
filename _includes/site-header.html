@@ -1,0 +1,59 @@
+<script>document.documentElement.className += " has-js";</script>
+<header class="site-header">
+    <a class="site-header__brand" href="/">
+        <img class="logo" src="/assets/images/dodge-labs-logo-white.png" alt="Dodge Labs">
+    </a>
+
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+        <span>Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__links">
+            {%- for item in site.data.navigation.primary -%}
+            {%- if item.live %}
+            <li>
+                <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+            </li>
+            {%- endif -%}
+            {%- endfor %}
+        </ul>
+
+        {%- assign subscribe = site.data.navigation.cta.subscribe -%}
+        {%- if subscribe.live %}
+        <div class="site-nav__ctas">
+            <a href="{{ subscribe.url }}" class="btn-nav btn-nav--primary"{% if page.url == subscribe.url %} aria-current="page"{% endif %}>{{ subscribe.label }}</a>
+        </div>
+        {%- endif %}
+    </nav>
+</header>
+<script>
+    (function () {
+        var toggle = document.querySelector(".site-nav__toggle");
+        var nav = document.getElementById("site-nav");
+        if (!toggle || !nav) return;
+
+        function setOpen(open) {
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+            nav.classList.toggle("site-nav--open", open);
+        }
+
+        toggle.addEventListener("click", function () {
+            setOpen(toggle.getAttribute("aria-expanded") !== "true");
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+                setOpen(false);
+                toggle.focus();
+            }
+        });
+
+        document.addEventListener("click", function (e) {
+            if (toggle.getAttribute("aria-expanded") !== "true") return;
+            if (nav.contains(e.target) || toggle.contains(e.target)) return;
+            setOpen(false);
+        });
+    })();
+</script>

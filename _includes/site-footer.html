@@ -1,0 +1,40 @@
+{%- assign subscribe = site.data.navigation.cta.subscribe -%}
+<footer class="site-footer">
+    <div class="container container--wide">
+        <div class="site-footer__columns">
+            {%- for column in site.data.navigation.footer %}
+            <nav class="site-footer__column" aria-label="{{ column.title }}">
+                <h2 class="site-footer__title">{{ column.title }}</h2>
+                <ul class="site-footer__list">
+                    {%- for link in column.links %}
+                    {%- if link.live %}
+                    <li><a href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a></li>
+                    {%- else %}
+                    <li><span class="site-footer__pending">{{ link.label }}</span></li>
+                    {%- endif -%}
+                    {%- endfor %}
+                </ul>
+            </nav>
+            {%- endfor %}
+
+            {%- if subscribe.live %}
+            <div class="site-footer__column site-footer__subscribe">
+                <h2 class="site-footer__title">{{ subscribe.title }}</h2>
+                <p>{{ subscribe.pitch }}</p>
+                <a href="{{ subscribe.url }}" class="btn-nav btn-nav--primary">{{ subscribe.label }}</a>
+            </div>
+            {%- endif %}
+        </div>
+
+        <div class="site-footer__meta">
+            <a class="site-footer__brand" href="/">
+                <img src="/assets/images/dodge-labs-logo-white.png" alt="Dodge Labs">
+            </a>
+            <p class="site-footer__copyright">&copy; {{ site.time | date: '%Y' }} Dodge Labs, LLC. All rights reserved.</p>
+            <p class="site-footer__locale">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+                {{ site.data.navigation.meta.locale }}
+            </p>
+        </div>
+    </div>
+</footer>

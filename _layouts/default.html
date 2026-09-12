@@ -23,20 +23,9 @@
     {% if jekyll.environment == 'production' %}
         {% include google-tag-manager-body.html %}
     {% endif %}
-    <header class="site-header">
-        <a href="/">
-            <img class="logo" src="/assets/images/dodge-labs-logo-white.png" alt="Dodge Labs Logo">
-        </a>
-        <nav>
-            <a href="/schedule-your-intro-call">Schedule Your Intro Call</a>
-        </nav>
-    </header>
+    {% include site-header.html %}
     {{ content }}
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {{ site.time | date: '%Y' }} Dodge Labs, LLC.<br>All Rights Reserved.</p>
-        </div>
-    </footer>
+    {% include site-footer.html %}
     {% if page.features.mermaid %}
       {% include mermaid.html %}
     {% endif %}

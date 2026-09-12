@@ -511,11 +511,11 @@ ol {
 .btn-secondary {
   display: inline-flex;
   align-items: center;
-  background-color: transparent;
+  background-color: var(--color-highlight);
   color: var(--color-navy);
   text-decoration: none;
-  padding: 14px 22px;
-  border: 2px solid var(--color-navy);
+  padding: 16px 24px;
+  border: none;
   border-radius: 50px;
   font-weight: 500;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -523,7 +523,7 @@ ol {
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-navy);
+  background-color: var(--color-red);
   color: var(--color-white);
 }
 

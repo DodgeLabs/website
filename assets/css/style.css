@@ -544,36 +544,41 @@ button.btn-secondary {
   margin-top: 0;
 }
 
-.form-disclosure__chevron {
-  transition: transform 0.28s ease;
+.form-disclosure__toggle-wrap,
+.form-disclosure__clip {
+  display: grid;
+  transition: grid-template-rows 0.35s ease;
 }
 
-.form-disclosure.is-open .form-disclosure__chevron {
-  transform: rotate(180deg);
+.form-disclosure__toggle-wrap {
+  grid-template-rows: 1fr;
 }
 
 .form-disclosure__clip {
-  display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s ease;
+}
+
+.form-disclosure.is-open .form-disclosure__toggle-wrap {
+  grid-template-rows: 0fr;
 }
 
 .form-disclosure.is-open .form-disclosure__clip {
   grid-template-rows: 1fr;
 }
 
+.form-disclosure__toggle-inner,
 .form-disclosure__inner {
   overflow: hidden;
   min-height: 0;
 }
 
-.form-disclosure__inner .hs-newsletter-form {
-  padding-top: 12px;
+.form-disclosure.is-open .form-disclosure__toggle {
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .form-disclosure__clip,
-  .form-disclosure__chevron {
+  .form-disclosure__toggle-wrap,
+  .form-disclosure__clip {
     transition: none;
   }
 }

@@ -14,14 +14,9 @@ When I have something worth your time, it lands in your inbox. Read it, use it, 
 {%- if include.collapse_form %}
 <div class="card__body">
 <div class="form-disclosure">
-    <div class="form-disclosure__toggle-wrap">
-        <div class="form-disclosure__toggle-inner">
-            <button type="button" class="btn-secondary form-disclosure__toggle" aria-expanded="false" aria-controls="newsletter-subscribe-form">
-                Subscribe to the newsletter
-                <svg class="form-disclosure__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
-            </button>
-        </div>
-    </div>
+    <p class="form-disclosure__prompt">
+        <a href="#newsletter-subscribe-form" class="form-disclosure__link" aria-expanded="false" aria-controls="newsletter-subscribe-form">Subscribe to the newsletter</a>
+    </p>
     <div class="form-disclosure__clip" id="newsletter-subscribe-form">
         <div class="form-disclosure__inner" inert>
             {% include hubspot-newsletter-form.html target="hs-newsletter-form-archive" %}
@@ -32,16 +27,18 @@ When I have something worth your time, it lands in your inbox. Read it, use it, 
 <script>
     (function () {
         document.querySelectorAll(".form-disclosure").forEach(function (root) {
-            var btn = root.querySelector(".form-disclosure__toggle");
+            var link = root.querySelector(".form-disclosure__link");
             var inner = root.querySelector(".form-disclosure__inner");
-            if (!btn || btn.dataset.bound) return;
-            btn.dataset.bound = "true";
-            btn.addEventListener("click", function () {
+            if (!link || link.dataset.bound) return;
+            link.dataset.bound = "true";
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
                 if (root.classList.contains("is-open")) return;
                 root.classList.add("is-open");
-                btn.setAttribute("aria-expanded", "true");
-                btn.setAttribute("tabindex", "-1");
-                btn.setAttribute("aria-hidden", "true");
+                var label = document.createElement("span");
+                label.className = "form-disclosure__label";
+                label.textContent = link.textContent.trim();
+                link.replaceWith(label);
                 if (inner) inner.removeAttribute("inert");
             });
         });

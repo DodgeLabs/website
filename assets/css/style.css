@@ -540,45 +540,52 @@ button.btn-secondary {
   cursor: pointer;
 }
 
-.form-disclosure__toggle {
-  margin-top: 0;
+.form-disclosure__prompt {
+  display: none;
+  margin-bottom: 0;
 }
 
-.form-disclosure__toggle-wrap,
-.form-disclosure__clip {
+.has-js .form-disclosure__prompt {
+  display: block;
+}
+
+.form-disclosure__link {
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+
+.form-disclosure__link:hover {
+  color: var(--color-red);
+}
+
+.form-disclosure__label {
+  color: var(--color-text);
+}
+
+.has-js .form-disclosure__clip {
   display: grid;
+  grid-template-rows: 0fr;
   transition: grid-template-rows 0.35s ease;
 }
 
-.form-disclosure__toggle-wrap {
+.has-js .form-disclosure.is-open .form-disclosure__clip {
   grid-template-rows: 1fr;
 }
 
-.form-disclosure__clip {
-  grid-template-rows: 0fr;
-}
-
-.form-disclosure.is-open .form-disclosure__toggle-wrap {
-  grid-template-rows: 0fr;
-}
-
-.form-disclosure.is-open .form-disclosure__clip {
-  grid-template-rows: 1fr;
-}
-
-.form-disclosure__toggle-inner,
 .form-disclosure__inner {
   overflow: hidden;
   min-height: 0;
 }
 
-.form-disclosure.is-open .form-disclosure__toggle {
-  pointer-events: none;
+.has-js .form-disclosure.is-open .form-disclosure__inner .hs-newsletter-form {
+  padding-top: 8px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .form-disclosure__toggle-wrap,
-  .form-disclosure__clip {
+  .has-js .form-disclosure__clip {
     transition: none;
   }
 }

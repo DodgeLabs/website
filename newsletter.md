@@ -4,7 +4,7 @@ title: Newsletter
 redirect_from:
   - /newsletter-subscriber-motivations
 ---
-{% include subscribe-card.html %}
+{% include subscribe-card.html collapse_form=true %}
 {% assign sorted_newsletters = site.newsletters | sort: 'date' | reverse %}
 {% for newsletter in sorted_newsletters %}
 <article class="card">

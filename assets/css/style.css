@@ -533,6 +533,51 @@ ol {
   fill: currentColor;
 }
 
+button.btn-secondary {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.form-disclosure__toggle {
+  margin-top: 0;
+}
+
+.form-disclosure__chevron {
+  transition: transform 0.28s ease;
+}
+
+.form-disclosure.is-open .form-disclosure__chevron {
+  transform: rotate(180deg);
+}
+
+.form-disclosure__clip {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.form-disclosure.is-open .form-disclosure__clip {
+  grid-template-rows: 1fr;
+}
+
+.form-disclosure__inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.form-disclosure__inner .hs-newsletter-form {
+  padding-top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-disclosure__clip,
+  .form-disclosure__chevron {
+    transition: none;
+  }
+}
+
 .cal-embed iframe {
   height: auto;
 }

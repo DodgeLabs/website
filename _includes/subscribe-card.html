@@ -15,7 +15,7 @@ When I have something worth your time, it lands in your inbox. Read it, use it, 
 <div class="card__body">
 <div class="form-disclosure">
     <p class="form-disclosure__prompt">
-        <a href="#newsletter-subscribe-form" class="form-disclosure__link" aria-expanded="false" aria-controls="newsletter-subscribe-form">Subscribe to the newsletter</a>
+        <a href="#newsletter-subscribe-form" class="form-disclosure__link" aria-expanded="false" aria-controls="newsletter-subscribe-form"><strong>Subscribe to the newsletter</strong></a>
     </p>
     <div class="form-disclosure__clip" id="newsletter-subscribe-form">
         <div class="form-disclosure__inner" inert>
@@ -35,7 +35,7 @@ When I have something worth your time, it lands in your inbox. Read it, use it, 
                 e.preventDefault();
                 if (root.classList.contains("is-open")) return;
                 root.classList.add("is-open");
-                var label = document.createElement("span");
+                var label = document.createElement("strong");
                 label.className = "form-disclosure__label";
                 label.textContent = link.textContent.trim();
                 link.replaceWith(label);

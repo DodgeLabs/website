@@ -11,11 +11,16 @@ layout: main
 <div class="card__body" markdown="1">
 {{ content }}
 </div>
+</article>
 
-<footer class="card__footer">
-<a href="/schedule-your-intro-call" class="btn-primary">
-Schedule Your Intro Call 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
-</a>
-</footer>
+<article class="card">
+<header class="card__header" markdown="1">
+## Want to get notified when the next newsletter drops?
+</header>
+<div class="card__body" markdown="1">
+Subscribe to receive these newsletters in your inbox. Advice, insights, and tricks delivered the same way I’d share them on call with my clients.
+</div>
+<div class="card__body">
+{% include subscribe-form-disclosure.html panel_id="newsletter-subscribe-form-post" form_target="hs-newsletter-form-post" %}
+</div>
 </article>

@@ -13,37 +13,7 @@ When I have something worth your time, it lands in your inbox. Read it, use it, 
 
 {%- if include.collapse_form %}
 <div class="card__body">
-<div class="form-disclosure">
-    <p class="form-disclosure__prompt">
-        <a href="#newsletter-subscribe-form" class="form-disclosure__link" aria-expanded="false" aria-controls="newsletter-subscribe-form"><strong>Subscribe to the newsletter</strong></a>
-    </p>
-    <div class="form-disclosure__clip" id="newsletter-subscribe-form">
-        <div class="form-disclosure__inner" inert>
-            {% include hubspot-newsletter-form.html target="hs-newsletter-form-archive" %}
-            <p class="form-note">No ads, no spam, no bullshit. Unsubscribe whenever you’d like.</p>
-        </div>
-    </div>
-</div>
-<script>
-    (function () {
-        document.querySelectorAll(".form-disclosure").forEach(function (root) {
-            var link = root.querySelector(".form-disclosure__link");
-            var inner = root.querySelector(".form-disclosure__inner");
-            if (!link || link.dataset.bound) return;
-            link.dataset.bound = "true";
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                if (root.classList.contains("is-open")) return;
-                root.classList.add("is-open");
-                var label = document.createElement("strong");
-                label.className = "form-disclosure__label";
-                label.textContent = link.textContent.trim();
-                link.replaceWith(label);
-                if (inner) inner.removeAttribute("inert");
-            });
-        });
-    })();
-</script>
+{% include subscribe-form-disclosure.html panel_id="newsletter-subscribe-form" form_target="hs-newsletter-form-archive" %}
 </div>
 {%- else %}
 <div class="card__body">

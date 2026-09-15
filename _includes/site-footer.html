@@ -1,0 +1,21 @@
+<footer class="site-footer">
+    <div class="container container--wide">
+        <nav class="site-footer__links" aria-label="Footer">
+            <ul>
+                {%- for link in site.data.navigation.footer %}
+                {%- if link.live %}
+                <li><a href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a></li>
+                {%- endif -%}
+                {%- endfor %}
+            </ul>
+        </nav>
+
+        <div class="site-footer__meta">
+            <a class="site-footer__brand" href="/">
+                <img src="/assets/images/dodge-labs-logo-white.png" alt="Dodge Labs">
+            </a>
+            <p class="site-footer__copyright">&copy; {{ site.time | date: '%Y' }} Dodge Labs, LLC. All rights reserved.</p>
+            <img class="site-footer__flag" src="/assets/images/us-flag.svg" width="53" height="28" alt="United States">
+        </div>
+    </div>
+</footer>

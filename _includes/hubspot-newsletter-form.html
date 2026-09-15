@@ -1,0 +1,65 @@
+{%- assign hs = site.hubspot -%}
+{%- assign target = include.target | default: "hs-newsletter-form" -%}
+{%- if hs.portal_id != "" and hs.newsletter_form_id != "" -%}
+<div class="hs-newsletter-form" id="{{ target }}"></div>
+<script>
+    (function () {
+        var target = "#{{ target }}";
+        var src = "https://js.hsforms.net/forms/embed/v2.js";
+
+        var brandCss = [
+            '@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");',
+            '.hs-form, .hs-form input, .hs-form label, .hs-form select, .hs-form textarea, .hs-button { font-family: "Roboto", sans-serif !important; }',
+            '.hs-form-field { margin-bottom: 16px; }',
+            '.hs-form-field > label, .hs-form-field > label span { display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: #1f1f1f !important; }',
+            '.hs-form-field > label span { display: inline; margin-bottom: 0; }',
+            '.inputs-list label, .inputs-list label span, .hs-form-booleancheckbox-display span { color: #1f1f1f !important; }',
+            '.hs-form-required { color: #ee4e47; margin-left: 2px; }',
+            '.hs-input[type="text"], .hs-input[type="email"] { width: 100% !important; max-width: 100% !important; box-sizing: border-box; padding: 12px 14px; font-size: 1rem; color: #1f1f1f; background-color: #ffffff; border: 1px solid rgba(31, 31, 31, 0.25); border-radius: 8px; }',
+            '.hs-input[type="text"]:focus, .hs-input[type="email"]:focus { outline: none; border-color: #14133d; box-shadow: 0 0 0 3px rgba(20, 19, 61, 0.15); }',
+            '.inputs-list { list-style: none; margin: 0; padding: 0; }',
+            '.inputs-list label { display: flex; gap: 8px; align-items: flex-start; font-size: 0.9rem; font-weight: 400; line-height: 1.4; }',
+            '.hs-button, input[type="submit"].hs-button { display: inline-flex; align-items: center; justify-content: center; margin-top: 8px; padding: 16px 24px !important; border: none; border-radius: 50px; background-color: #14133d !important; color: #ffffff !important; font-size: 1rem !important; font-weight: 500 !important; line-height: 1 !important; letter-spacing: normal !important; text-transform: none !important; cursor: pointer; transition: background-color 0.2s ease; }',
+            '.hs-button:hover, .hs-button:focus, .hs-button.primary:hover, input[type="submit"].hs-button:hover, input[type="submit"].hs-button:focus, input[type="submit"].hs-button.primary:hover { background-color: #ee4e47 !important; background-image: none !important; border-color: #ee4e47 !important; color: #ffffff !important; }',
+            '.hs-error-msg, .hs-error-msgs label { color: #ee4e47 !important; font-size: 0.85rem; }',
+            '.submitted-message { font-size: 1rem; line-height: 1.6; color: #1f1f1f; }'
+        ].join("\n");
+
+        function create() {
+            window.hbspt.forms.create({
+                region: "{{ hs.region }}",
+                portalId: "{{ hs.portal_id }}",
+                formId: "{{ hs.newsletter_form_id }}",
+                target: target,
+                cssRequired: brandCss,
+                onFormReady: function (form) {
+                    var submit = null;
+                    if (form && form.jquery) {
+                        submit = form.find('input[type="submit"]')[0];
+                    } else if (form && form.querySelector) {
+                        submit = form.querySelector('input[type="submit"]');
+                    }
+                    if (submit) submit.value = "Subscribe to the newsletter";
+                }
+            });
+        }
+
+        if (window.hbspt && window.hbspt.forms) return create();
+
+        var existing = document.querySelector('script[data-hubspot-forms]');
+        if (existing) return existing.addEventListener("load", create);
+
+        var script = document.createElement("script");
+        script.setAttribute("data-hubspot-forms", "");
+        script.async = true;
+        script.onload = create;
+        script.src = src;
+        document.head.appendChild(script);
+    })();
+</script>
+{%- else -%}
+<div class="form-placeholder">
+    <p class="form-placeholder__label">Newsletter signup form</p>
+    <p>The HubSpot embed isn’t connected yet. Set <code>hubspot.portal_id</code> and <code>hubspot.newsletter_form_id</code> in <code>_config.yml</code> and the real form renders here.</p>
+</div>
+{%- endif -%}

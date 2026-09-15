@@ -1,0 +1,11 @@
+{%- assign photo = site.static_files | where: "path", "/assets/images/roger-mitchell.jpg" | first -%}
+<div class="author">
+    {%- if photo %}
+    <img class="author__photo" src="/assets/images/roger-mitchell.jpg" width="96" height="96" alt="Roger Mitchell">
+    {%- else %}
+    <div class="author__photo photo-placeholder">Headshot missing</div>
+    {%- endif %}
+    <div class="author__text">
+        <p>I’m Roger Mitchell. I help operators in financial services, enterprise nonprofits, and professional services stop living in spreadsheets, side systems, and “temporary” fixes — and start shipping work that holds.</p>
+    </div>
+</div>

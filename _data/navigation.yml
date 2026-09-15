@@ -1,0 +1,39 @@
+primary:
+  - label: About
+    url: /about/
+    live: true
+  - label: Newsletter
+    url: /newsletter/
+    live: true
+
+cta:
+  subscribe:
+    label: Subscribe
+    title: Subscribe
+    url: /subscribe-to-newsletter/
+    pitch: A short email for operators.
+    live: true
+
+footer:
+  - label: About
+    url: /about/
+    live: true
+  - label: Newsletter
+    url: /newsletter/
+    live: true
+  - label: Subscribe
+    url: /subscribe-to-newsletter/
+    live: true
+  - label: Schedule
+    url: /schedule-your-intro-call/
+    live: true
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/rogeramitchell/
+    external: true
+    live: true
+
+meta:
+  links:
+    - label: Privacy
+      url: /privacy/
+      live: false

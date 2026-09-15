@@ -1,0 +1,20 @@
+<article class="card">
+<header class="card__header" markdown="1">
+# Only Done Right by Roger Mitchell
+</header>
+
+<div class="card__body" markdown="1">
+I write a short email for operators. Advice the way I’d say it on a call. When it’s worth your time, it lands in your inbox. Read it, use it, or delete it.
+</div>
+
+{%- if include.collapse_form %}
+<div class="card__body">
+{% include subscribe-form-disclosure.html panel_id="newsletter-subscribe-form" form_target="hs-newsletter-form-archive" %}
+</div>
+{%- else %}
+<div class="card__body">
+{% include hubspot-newsletter-form.html %}
+<p class="form-note">No ads, no spam, no bullshit. Unsubscribe whenever you’d like.</p>
+</div>
+{%- endif %}
+</article>

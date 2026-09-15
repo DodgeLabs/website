@@ -1,0 +1,33 @@
+{%- assign panel_id = include.panel_id | default: "newsletter-subscribe-form" -%}
+{%- assign form_target = include.form_target | default: "hs-newsletter-form" -%}
+<div class="form-disclosure">
+    <p class="form-disclosure__prompt">
+        <a href="#{{ panel_id }}" class="form-disclosure__link" aria-expanded="false" aria-controls="{{ panel_id }}"><strong>Subscribe to the newsletter</strong></a>
+    </p>
+    <div class="form-disclosure__clip" id="{{ panel_id }}">
+        <div class="form-disclosure__inner" inert>
+            {% include hubspot-newsletter-form.html target=form_target %}
+            <p class="form-note">No ads, no spam, no bullshit. Unsubscribe whenever you’d like.</p>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        document.querySelectorAll(".form-disclosure").forEach(function (root) {
+            var link = root.querySelector(".form-disclosure__link");
+            var inner = root.querySelector(".form-disclosure__inner");
+            if (!link || link.dataset.bound) return;
+            link.dataset.bound = "true";
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                if (root.classList.contains("is-open")) return;
+                root.classList.add("is-open");
+                var label = document.createElement("strong");
+                label.className = "form-disclosure__label";
+                label.textContent = link.textContent.trim();
+                link.replaceWith(label);
+                if (inner) inner.removeAttribute("inert");
+            });
+        });
+    })();
+</script>

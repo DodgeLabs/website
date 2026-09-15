@@ -59,7 +59,7 @@ I work with growth and mid-market operators who are done treating symptoms. You 
 </header>
 
 <div class="card__body">
-<p>These folks are operators like you who wanted free from workarounds — and to regularly drive change in their organizations.</p>
+<p>These folks are operators like you who wanted to be free from workarounds — and to regularly drive change in their organizations.</p>
 {% include homepage-proof.html %}
 </div>
 </article>
@@ -70,7 +70,7 @@ I work with growth and mid-market operators who are done treating symptoms. You 
 </header>
 
 <div class="card__body" markdown="1">
-When you hire Dodge Labs, you’re hiring an experienced architect. You’re not getting bait-and-switch, some offshore team half-a-world away, or a bench of billable bodies.
+When you hire Dodge Labs, you’re hiring an experienced architect and operator. You’re not getting bait-and-switch, some offshore team half-a-world away, or a bench of billable bodies.
 
 ### Advisory
 

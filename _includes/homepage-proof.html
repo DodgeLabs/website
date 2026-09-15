@@ -1,0 +1,15 @@
+{%- comment -%}
+Homepage proof card items. Copy locked in .agents/proof-card.md.
+Quotes use initials only — no profile photos.
+{%- endcomment -%}
+{%- for item in site.data.homepage-proof %}
+<div class="proof-item">
+    <div class="proof-item__avatar" aria-hidden="true">
+        <span class="proof-item__initials">{{ item.initials }}</span>
+    </div>
+    <blockquote class="proof">
+        <p>{{ item.quote }}</p>
+        <cite><strong>{{ item.name }}</strong>, {{ item.cite }}</cite>
+    </blockquote>
+</div>
+{%- endfor %}

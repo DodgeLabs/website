@@ -1,7 +1,37 @@
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M9XDCWB8');</script>
+<!-- Google Tag Manager (injects after load so it does not contend with LCP) -->
+<script>
+(function () {
+    var w = window, d = document, s = 'script', l = 'dataLayer', i = 'GTM-M9XDCWB8';
+    w[l] = w[l] || [];
+
+    function loadGtm() {
+        if (w.__gtmLoaded) return;
+        w.__gtmLoaded = true;
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    }
+
+    function schedule() {
+        if ('requestIdleCallback' in w) {
+            requestIdleCallback(loadGtm, { timeout: 4000 });
+        } else {
+            loadGtm();
+        }
+    }
+
+    var preview = /[?&]gtm_preview=/.test(w.location.search) || /[?&]gtm_debug=/.test(w.location.search);
+    if (preview) {
+        loadGtm();
+    } else if (d.readyState === 'complete') {
+        schedule();
+    } else {
+        w.addEventListener('load', schedule);
+    }
+})();
+</script>
 <!-- End Google Tag Manager -->

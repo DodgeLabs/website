@@ -6,14 +6,14 @@ description: "I’m a solo management consultant. I help operators in financial 
 
 <article class="card">
 <header class="card__header">
-    <h1>About Roger</h1>
+    <h1>About Roger Mitchell</h1>
 </header>
 
 <div class="card__body">
-    {%- assign photo = site.static_files | where: "path", "/assets/images/roger-mitchell.jpg" | first -%}
+    {%- assign photo = site.static_files | where: "path", "/assets/images/roger-mitchell-192.webp" | first -%}
     <div class="author">
         {%- if photo %}
-        <img class="author__photo" src="/assets/images/roger-mitchell.jpg" width="96" height="96" alt="Roger Mitchell">
+        <img class="author__photo" src="/assets/images/roger-mitchell-192.webp" width="96" height="96" alt="Roger Mitchell">
         {%- else %}
         <div class="author__photo photo-placeholder">Headshot missing</div>
         {%- endif %}

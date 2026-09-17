@@ -4,6 +4,7 @@ baseurl: ""
 markdown: kramdown
 permalink: pretty
 theme: null
+future: true
 
 collections:
   newsletters:

@@ -759,6 +759,8 @@ button.btn-secondary {
 .episode-links .btn-secondary {
   gap: 10px;
   margin-top: 0;
+  padding: 8px 22px;
+  line-height: 1;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 

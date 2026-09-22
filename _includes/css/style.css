@@ -757,9 +757,47 @@ button.btn-secondary {
 }
 
 .episode-links .btn-secondary {
+  gap: 10px;
   margin-top: 0;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.card__body .episode-links .btn-secondary:hover {
-  color: var(--color-white);
+.episode-links .btn-secondary svg {
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+  margin-right: 0;
+  flex: 0 0 auto;
+}
+
+.episode-links .btn-spotify svg {
+  fill: #1ed760;
+}
+
+.episode-links .btn-apple svg {
+  fill: #9933cc;
+}
+
+.card__body .episode-links .btn-spotify:hover,
+.card__body .episode-links .btn-spotify:focus-visible {
+  background-color: #1ed760;
+  border-color: #1ed760;
+  color: #191414;
+}
+
+.card__body .episode-links .btn-spotify:hover svg,
+.card__body .episode-links .btn-spotify:focus-visible svg {
+  fill: #191414;
+}
+
+.card__body .episode-links .btn-apple:hover,
+.card__body .episode-links .btn-apple:focus-visible {
+  background-color: #9933cc;
+  border-color: #9933cc;
+  color: #ffffff;
+}
+
+.card__body .episode-links .btn-apple:hover svg,
+.card__body .episode-links .btn-apple:focus-visible svg {
+  fill: #ffffff;
 }

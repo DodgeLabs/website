@@ -726,3 +726,80 @@ button.btn-secondary {
   width: 100%;
   overflow: visible;
 }
+
+.episode-media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.episode-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-navy);
+}
+
+.episode-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.episode-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.episode-links .btn-secondary {
+  gap: 10px;
+  margin-top: 0;
+  padding: 8px 22px;
+  line-height: 1;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.episode-links .btn-secondary svg {
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+  margin-right: 0;
+  flex: 0 0 auto;
+}
+
+.episode-links .btn-spotify svg {
+  fill: #1ed760;
+}
+
+.episode-links .btn-apple svg {
+  fill: #9933cc;
+}
+
+.card__body .episode-links .btn-spotify:hover,
+.card__body .episode-links .btn-spotify:focus-visible {
+  background-color: #1ed760;
+  border-color: #1ed760;
+  color: #191414;
+}
+
+.card__body .episode-links .btn-spotify:hover svg,
+.card__body .episode-links .btn-spotify:focus-visible svg {
+  fill: #191414;
+}
+
+.card__body .episode-links .btn-apple:hover,
+.card__body .episode-links .btn-apple:focus-visible {
+  background-color: #9933cc;
+  border-color: #9933cc;
+  color: #ffffff;
+}
+
+.card__body .episode-links .btn-apple:hover svg,
+.card__body .episode-links .btn-apple:focus-visible svg {
+  fill: #ffffff;
+}

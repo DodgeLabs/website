@@ -5,6 +5,10 @@ author: Roger Mitchell
 date: 2026-09-18
 description: "Clay before marble: redesign processes before you automate with AI, use real security layers like Brex, and don't throw slop grenades."
 tldr: "Iterate in clay before you chisel marble. Redesign the process before you automate it. Stack basic security like Swiss cheese. Use AI to sharpen trust, not blow it up with a slop grenade."
+episode:
+    youtube: https://www.youtube.com/watch?v=F6pkuZ3QmTY
+    spotify: https://open.spotify.com/episode/0g6NoLp7bgJOxwFAH8H5jR?si=UP7j5CK1SJefxuB8CRL07g
+    apple: https://podcasts.apple.com/us/podcast/only-done-right/id6814986424?i=1000791178191
 ---
 
 On a call this week, I offered a client this metaphor:

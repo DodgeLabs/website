@@ -8,6 +8,38 @@ layout: main
 </h1>
 </header>
 
+{%- assign episode_youtube = page.episode.youtube | default: "" | strip -%}
+{%- assign episode_spotify = page.episode.spotify | default: "" | strip -%}
+{%- assign episode_apple = page.episode.apple | default: "" | strip -%}
+{%- assign episode_youtube_id = "" -%}
+{%- if episode_youtube contains "watch?v=" -%}
+{%- assign episode_youtube_id = episode_youtube | split: "watch?v=" | last | split: "&" | first | split: "#" | first -%}
+{%- elsif episode_youtube contains "youtu.be/" -%}
+{%- assign episode_youtube_id = episode_youtube | split: "youtu.be/" | last | split: "?" | first | split: "&" | first | split: "/" | first | split: "#" | first -%}
+{%- elsif episode_youtube contains "/embed/" -%}
+{%- assign episode_youtube_id = episode_youtube | split: "/embed/" | last | split: "?" | first | split: "&" | first | split: "/" | first | split: "#" | first -%}
+{%- endif -%}
+{%- assign episode_youtube_id = episode_youtube_id | strip -%}
+{%- if episode_youtube_id != "" or episode_spotify != "" or episode_apple != "" -%}
+<div class="card__body episode-media">
+{%- if episode_youtube_id != "" -%}
+<div class="episode-embed">
+<iframe src="https://www.youtube-nocookie.com/embed/{{ episode_youtube_id | escape }}" title="{{ page.title | escape }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+{%- endif -%}
+{%- if episode_spotify != "" or episode_apple != "" -%}
+<div class="episode-links">
+{%- if episode_spotify != "" -%}
+<a class="btn-secondary" href="{{ episode_spotify | escape }}" target="_blank" rel="noopener noreferrer">Spotify</a>
+{%- endif -%}
+{%- if episode_apple != "" -%}
+<a class="btn-secondary" href="{{ episode_apple | escape }}" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+{%- endif -%}
+</div>
+{%- endif -%}
+</div>
+{%- endif -%}
+
 <div class="card__body">
 {{ content }}
 </div>

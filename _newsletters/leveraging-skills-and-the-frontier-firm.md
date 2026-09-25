@@ -5,6 +5,9 @@ author: Roger Mitchell
 date: 2026-09-25
 description: "Leverage other people’s skills instead of hoarding your own, keep skills and data portable across Salesforce and HubSpot lock-in, and use AI as a sandbox—not a surveillance stack."
 tldr: "Don’t become a skills hoarder. Master portable skills, prompts, and secure data access—not every platform’s AI front door. Use AI to refine judgment in a sandbox; don’t use it to track people. That’s how you meet the frontier firm."
+episode:
+    youtube: https://www.youtube.com/watch?v=oMU9z4m6OY4
+    spotify: https://open.spotify.com/episode/3dMqUH26f97hsM51sV6P6c?si=d4ez6M_ZTeynkdOQ1MYI4Q
 ---
 
 **One of the fallacies I see with ambitious people that are early or mid-career is their desire to learn how to do what someone else does.** They think that acquiring skills is critical to their success or ascension within a team.

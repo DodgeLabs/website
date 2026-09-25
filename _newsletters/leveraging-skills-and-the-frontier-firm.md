@@ -8,6 +8,7 @@ tldr: "Don’t become a skills hoarder. Master portable skills, prompts, and sec
 episode:
     youtube: https://www.youtube.com/watch?v=oMU9z4m6OY4
     spotify: https://open.spotify.com/episode/3dMqUH26f97hsM51sV6P6c?si=d4ez6M_ZTeynkdOQ1MYI4Q
+    apple: https://podcasts.apple.com/us/podcast/only-done-right/id6814986424?i=1000791644600
 ---
 
 **One of the fallacies I see with ambitious people that are early or mid-career is their desire to learn how to do what someone else does.** They think that acquiring skills is critical to their success or ascension within a team.

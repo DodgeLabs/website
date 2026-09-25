@@ -1,0 +1,26 @@
+# Dodge Labs
+
+> Roger Mitchell runs Dodge Labs, a solo consultancy. The work is digital transformation for operators in growth and mid-market financial services, enterprise nonprofits, and professional services. Redesign the process before you automate it. Two ways to engage: Advisory (you own the decisions; he pressure-tests the path) and Projects (he diagnoses, designs, builds, and hands off something the team can run).
+
+Dodge Labs has no employees and no subcontractors. This site is the practice, the Only Done Right newsletter, and a 30-minute intro call.
+
+Only Done Right is a short email for operators, one idea at a time, on operational friction. The archive is the full set. The two newest essays are the current point of view: redesign before you automate, and keep skills and data portable instead of locking them into one vendor's AI front door.
+
+## Site
+
+- [Home](https://dodgelabs.com/): Who the work is for, and the split between Advisory and Projects.
+- [About Roger Mitchell](https://dodgelabs.com/about/): Solo management consultant. Dodge Labs started in 2016. The work sits between business judgment and the technical build.
+- [Subscribe to Only Done Right](https://dodgelabs.com/subscribe-to-newsletter/): Newsletter signup. Past issues are in the archive.
+- [Schedule an intro call](https://dodgelabs.com/schedule-your-intro-call/): 45 minutes on Google Meet. No pitch deck and no obligation.
+- [Newsletter archive](https://dodgelabs.com/newsletter/): Every Only Done Right essay, newest first.
+
+## Essays
+
+- [Leveraging Skills & The Frontier Firm](https://dodgelabs.com/newsletter/leveraging-skills-and-the-frontier-firm/): Use other people's skills instead of hoarding your own. Keep skills and data portable across Salesforce and HubSpot. Use AI as a sandbox, not a surveillance stack. 25 September 2026.
+- [Clay Before Marble: Redesign, Then Automate](https://dodgelabs.com/newsletter/clay-before-marble-redesign-then-automate/): Redesign the process before you automate it. Iterate in clay before you commit to marble. 18 September 2026.
+- [How to Decide Whether to Automate or Outsource](https://dodgelabs.com/newsletter/how-to-decide-whether-to-automate-or-outsource/): When hiring is off the table, automate repetitive standardized work and outsource varied creative work.
+- [When Keeping Your Current Systems is the Best Move](https://dodgelabs.com/newsletter/when-keeping-your-current-systems-is-the-best-move/): A newer system, including a new AI tool, is not automatically the right move. Sometimes the current systems should stay.
+
+## Optional
+
+- [Schedule a working session](https://dodgelabs.com/schedule/): Google Meet, Microsoft Teams, or a phone call. Separate from the intro call.

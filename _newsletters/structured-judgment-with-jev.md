@@ -8,6 +8,7 @@ tldr: "Chat gives you more text. Jev gives you structured judgment—Choice, Sco
 episode:
     youtube: https://www.youtube.com/watch?v=Psa5lTydtHM
     spotify: https://open.spotify.com/episode/075aiO5i7XVs6BoSyLWnB2?si=5HW4iaduTfKRPwiZipx7Ag
+    apple: https://podcasts.apple.com/us/podcast/only-done-right/id6814986424?i=1000793322994
 ---
 **This week, we’re diving into Jev, a new type of AI model available from TypeSafe.ai** that was [released a few weeks ago](https://typesafe.ai/blog/introducing-system-one-models-and-jev). They’re approaching AI from a different direction with a new class of models that are optimized for making structured decisions.
 

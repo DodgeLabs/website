@@ -5,6 +5,9 @@ author: Roger Mitchell
 date: 2026-10-02
 description: "Jev from TypeSafe.ai runs one-shot choice, score, and noul questions on structured state so systems can act on calibrated answers, not another chat transcript. Meeting notes as an example use case."
 tldr: "Chat gives you more text. Jev gives you structured judgment—Choice, Score, Noul—on one pass. Use meeting notes as the doorway: ask questions a CRM or workflow can act on, not another summary."
+episode:
+    youtube: https://www.youtube.com/watch?v=Psa5lTydtHM
+    spotify: https://open.spotify.com/episode/075aiO5i7XVs6BoSyLWnB2?si=5HW4iaduTfKRPwiZipx7Ag
 ---
 **This week, we’re diving into Jev, a new type of AI model available from TypeSafe.ai** that was [released a few weeks ago](https://typesafe.ai/blog/introducing-system-one-models-and-jev). They’re approaching AI from a different direction with a new class of models that are optimized for making structured decisions.
 
